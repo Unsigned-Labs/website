@@ -1,0 +1,143 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QRCode from "qrcode";
+
+const bolt12 =
+  "bitcoin:?lno=lno1zrxq8pjw7qjlm68mtp7e3yvxee4y5xrgjhhyf2fxhlphpckrvevh50u0qg8ulp38caek964s6al36zgjvg6v6m6g9fxpejqaygn9vtdj9ue35qszu30sh4t96rg9krydwhav78zc4qy8mu5teq475sjndr6rj4xcjkvqqvl0nskjqn23xvv28v2ln6432xhat5lyxnl3f2rquzvaaqkwq2nzeymt9gw0rla9ekvxawsqwv0ser3ndudxqgxny5rwp9s7k8s2r44fdmzmcww83c78527sh3dz68j50tk27mf2sqqsdghv9v3kzytcg8s0vxzphgu8gv";
+const lightningAddress = "basantagoswami@blink.sv";
+const nostrLink =
+  "https://nostr.at/npub1gmm2ehusvs35zgh6pq84m8hkj4ea0ygy3c9j2e3slzhjjce3kmns5tdaz2";
+
+// Generate QR code as data URL
+const qrCodeDataURL = await QRCode.toDataURL(bolt12, {
+  errorCorrectionLevel: "H",
+  margin: 1,
+  width: 300,
+  color: {
+    dark: "#000",
+    light: "#fff",
+  },
+});
+---
+
+<Layout title="Support">
+  <main class="min-h-screen flex items-center justify-center py-24">
+    <div class="container mx-auto px-6 max-w-xl">
+      <div class="space-y-8">
+        <!-- Lightning Address -->
+        <div class="border border-purple-800/30 rounded-xl p-6 space-y-3">
+          <div class="text-lg font-medium text-purple-400">Lightning Address</div>
+          <div class="flex items-center justify-between bg-black/30 p-3 rounded-lg">
+            <code class="text-gray-300">{lightningAddress}</code>
+            <button
+              class="copy-button ml-4 text-purple-400 hover:text-purple-300 transition-colors"
+              data-copy={lightningAddress}
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+
+        <!-- BOLT12 QR -->
+        <div class="border border-purple-800/30 rounded-xl p-6 space-y-4">
+          <div class="text-lg font-medium text-purple-400">BOLT12 Payment Code</div>
+          <div class="flex justify-center">
+            <img src={qrCodeDataURL} alt="BOLT12 QR Code" class="w-64 h-64 rounded-lg" />
+          </div>
+          <div class="flex justify-center">
+            <button
+              class="copy-button px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              data-copy={bolt12}
+            >
+              Copy Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Nostr -->
+        <div class="border border-purple-800/30 rounded-xl p-6 space-y-3">
+          <div class="text-lg font-medium text-purple-400">Zap on Nostr</div>
+          <p>You can zap us on nostr, which helps to show your support publicly</p>
+          <a
+            href={nostrLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-purple-400 hover:text-purple-300 transition-colors"
+          >
+            Visit profile →
+          </a>
+        </div>
+
+        <!-- Geyser Fund -->
+        <div class="border border-purple-800/30 rounded-xl p-6 space-y-3">
+          <div class="text-lg font-medium text-purple-400">Support Hengdang Development</div>
+          <p>
+            If you want to contribute specifically to the development of Hengdang and its reference
+            implementation, you can support us on Geyser
+          </p>
+          <a
+            href="https://geyser.fund/project/hengdang"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-purple-400 hover:text-purple-300 transition-colors"
+          >
+            Support on Geyser →
+          </a>
+        </div>
+
+        <!-- WebLN -->
+        <div class="border border-purple-800/30 rounded-xl p-6 space-y-3">
+          <div class="text-lg font-medium text-purple-400">Quick Payment with WebLN</div>
+          <p>
+            If you have a WebLN-supported wallet like Alby installed, you can make a payment
+            directly through your browser
+          </p>
+          <button
+            id="webln-button"
+            class="w-full bg-purple-600 text-white py-4 rounded-xl flex items-center justify-center space-x-3 hover:bg-purple-700 transition-colors text-lg font-medium"
+          >
+            ⚡️ Zap with WebLN
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  // WebLN functionality
+  const weblnButton = document.getElementById("webln-button");
+  if (weblnButton) {
+    weblnButton.addEventListener("click", async () => {
+      try {
+        await window.webln.enable();
+        await window.webln.sendPayment(lightningAddress);
+      } catch (error) {
+        console.error("WebLN payment failed:", error);
+      }
+    });
+  }
+
+  // Copy functionality
+  const copyButtons = document.querySelectorAll(".copy-button");
+  copyButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const textToCopy = button.getAttribute("data-copy");
+      if (!textToCopy) return;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        const originalText = button.textContent;
+        button.textContent = "Copied!";
+        button.classList.add("text-green-400");
+
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove("text-green-400");
+        }, 2000);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+    });
+  });
+</script>

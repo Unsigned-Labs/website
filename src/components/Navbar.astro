@@ -1,0 +1,30 @@
+---
+const navItems = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/blog/our-vision', text: 'Our Vision' },
+  { href: '/store', text: 'Store' },
+  { href: '/support', text: 'Support' },
+];
+---
+
+<header class="fixed w-full bg-black bg-opacity-90 z-50">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="w-32">
+        <a href="/">
+          <img src="/assets/logo.png" alt="Unsigned Labs Logo" class="h-8" />
+        </a>
+      </div>
+      <div class="hidden md:flex space-x-12">
+        {
+          navItems.map(({ href, text }) => (
+            <a href={href} class="text-base hover:text-purple-400">
+              {text}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
+</header>
