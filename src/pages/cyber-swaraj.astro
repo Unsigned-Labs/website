@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Cyber Swaraj">
+  <main class="min-h-screen py-32">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <h1 class="text-4xl font-bold mb-8 text-purple-500">Cyber Swaraj</h1>
+
+      <div class="space-y-12">
+        <!-- Intro Section -->
+        <section class="space-y-6">
+          <p class="text-xl">
+            A Hindi podcast where we discuss freedom technologies like nostr and
+            Bitcoin, and how they enable digital self sovereignty
+          </p>
+        </section>
+
+        <!-- Latest Episodes -->
+        <section>
+          <h2 class="text-3xl font-bold mb-6">Watch Latest Episodes</h2>
+
+          <div class="bg-black bg-opacity-30 p-1 rounded-xl overflow-hidden">
+            <div class="aspect-video rounded-lg overflow-hidden">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/videoseries?si=TzfXmXcZ1sLrM9gk&list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="w-full h-full"></iframe>
+            </div>
+          </div>
+        </section>
+
+        <p>
+          Check out <a
+            href="https://www.youtube.com/playlist?list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ"
+            target="_blank">all the episodes</a
+          > of Cyber Swaraj on our <a href="https://www.youtube.com/@unsignedlabs" target="_blank"
+            >YouTube Channel</a
+          >
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>

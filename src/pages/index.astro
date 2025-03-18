@@ -41,9 +41,9 @@ import Layout from "../layouts/Layout.astro";
           <div>
             <h2 class="text-3xl font-bold mb-6">Unfuck the Internet</h2>
             <p class="text-base leading-relaxed">
-              Surveillance has turned the Internet into a panopticon. We're here to fight back. Join us
-              for a gathering dedicated to digital privacy, open-source technologies, and reclaiming
-              control of our digital lives.
+              Surveillance has turned the Internet into a panopticon. We're here to fight back. Join
+              us for a gathering dedicated to digital privacy, open-source technologies, and
+              reclaiming control of our digital lives.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ import Layout from "../layouts/Layout.astro";
               href="https://lu.ma/unsigned"
               class="inline-flex items-center text-base text-white border-2 border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#995BD9] transition-colors"
             >
-              View all events
+              View All Events
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5 ml-2"
@@ -97,6 +97,59 @@ import Layout from "../layouts/Layout.astro";
             allowfullscreen=""
             aria-hidden="false"
             tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cyber Swaraj Section -->
+  <section class="py-24 bg-gradient-to-b from-black to-[#150B1F]">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Cyber Swaraj</h2>
+            <p class="text-base leading-relaxed">
+              A Hindi podcast where we discuss freedom technologies like nostr and Bitcoin, and how
+              they enable digital self sovereignty
+            </p>
+          </div>
+
+          <div>
+            <a
+              href="https://www.youtube.com/playlist?list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ"
+              target="_blank"
+              class="inline-flex items-center text-base bg-[#995BD9] text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors"
+            >
+              Watch on YouTube
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 ml-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-purple-900 bg-opacity-20 absolute inset-0 transform -rotate-2 rounded-lg">
+          </div>
+          <div class="relative z-10 rounded-lg overflow-hidden shadow-xl">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/videoseries?si=TzfXmXcZ1sLrM9gk&list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ"
+              title="Cyber Swaraj"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              class="w-full aspect-video"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -170,6 +223,11 @@ import Layout from "../layouts/Layout.astro";
           <div class="space-y-2">
             <a href="/blog/our-vision" class="text-base block hover:text-gray-200">Our Vision</a>
             <a href="/support" class="text-base block hover:text-gray-200">Support</a>
+            <a
+              href="https://www.youtube.com/playlist?list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ"
+              class="text-base block hover:text-gray-200"
+              target="_blank">Cyber Swaraj</a
+            >
             <p class="text-base font-bold">Hengdang</p>
             <a
               href="https://hengdang-protocol.github.io/"
