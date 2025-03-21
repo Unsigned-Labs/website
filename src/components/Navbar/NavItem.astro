@@ -1,0 +1,28 @@
+---
+export interface Props {
+  href: string;
+  text: string;
+  currentPath: string;
+  isMobile?: boolean;
+}
+
+const { href, text, currentPath, isMobile = false } = Astro.props;
+
+const isActive = currentPath === href || (href !== "/" && currentPath.startsWith(href));
+
+const baseClasses = "transition-all duration-300";
+const mobileClasses = "text-4xl font-light tracking-wide hover:text-purple-400";
+const desktopClasses = "text-base tracking-wide font-light hover:text-white";
+
+const activeClasses = isMobile ? "text-purple-400" : "text-white border-b-2 border-purple-400 pb-1";
+
+const inactiveClasses = isMobile ? "text-white" : "text-gray-300";
+
+const classes = [
+  baseClasses,
+  isMobile ? mobileClasses : desktopClasses,
+  isActive ? activeClasses : inactiveClasses,
+];
+---
+
+<a href={href} class:list={classes}>{text}</a>

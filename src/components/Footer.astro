@@ -1,62 +1,136 @@
-<footer class="py-12">
-  <div class="container mx-auto px-6">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="text-xl font-bold mb-4">Unsigned Labs</h3>
-        <p class="text-base">Building tools for digital self-sovereignty.</p>
+---
+const resources = [
+  { name: "Our Vision", url: "/blog/our-vision" },
+  { name: "Support Us", url: "/support" },
+  {
+    name: "Cyber Swaraj",
+    url: "https://www.youtube.com/playlist?list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ",
+    external: true,
+  },
+];
+
+const hengdang = [
+  { name: "Hengdang Protocol", url: "https://hengdang-protocol.github.io/", external: true },
+  {
+    name: "Hengdang Protocol Spec",
+    url: "https://github.com/Hengdang-Protocol/spec/",
+    external: true,
+  },
+  {
+    name: "Hengdang Matrix Community",
+    url: "https://matrix.to/#/#hengdang:matrix.org",
+    external: true,
+  },
+];
+
+const social = [
+  { name: "GitHub", url: "https://github.com/unsigned-labs", external: true },
+  {
+    name: "Nostr",
+    url: "https://nostr.at/npub12ucpp6c0g070cffu9z2c9rfsha5nnvzk8p8ze3ny3aqqj6k2aa8q0c52sm",
+    external: true,
+  },
+  { name: "Twitter", url: "https://x.com/unsignedlabs", external: true },
+  { name: "Discord", url: "https://discord.gg/dDa9m6hKdr", external: true },
+];
+---
+
+<footer class="mt-8">
+  <div class="container mx-auto px-6 pt-8 pb-6">
+    <div class="flex flex-wrap justify-between">
+      <div class="w-1/2 md:w-1/4 mb-8">
+        <h3 class="text-sm uppercase text-gray-500 tracking-wider mb-4 font-medium">RESOURCES</h3>
+        <ul class="space-y-2">
+          {
+            resources.map((item) => (
+              <li>
+                <a
+                  href={item.url}
+                  class="text-gray-300 hover:text-purple-400 transition-colors text-sm flex items-center group"
+                  {...(item.external ? { target: "_blank", rel: "noopener" } : {})}
+                >
+                  {item.name}
+                  {item.external && (
+                    <span
+                      data-lucide="external-link"
+                      class="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
+                  )}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
-      <div>
-        <h3 class="text-xl font-bold mb-4">Connect</h3>
-        <div class="space-y-2">
-          <a
-            href="https://github.com/unsigned-labs"
-            class="text-base block hover:text-gray-200"
-            target="_blank">GitHub</a
-          >
-          <a
-            href="https://nostr.at/npub12ucpp6c0g070cffu9z2c9rfsha5nnvzk8p8ze3ny3aqqj6k2aa8q0c52sm"
-            class="text-base block hover:text-gray-200"
-            target="_blank">Nostr</a
-          >
-          <a
-            href="https://x.com/unsignedlabs"
-            class="text-base block hover:text-gray-200"
-            target="_blank">Twitter</a
-          >
-          <a
-            href="https://discord.gg/dDa9m6hKdr"
-            class="text-base block hover:text-gray-200"
-            target="_blank">Discord</a
-          >
-        </div>
+
+      <div class="w-1/2 md:w-1/4 mb-8">
+        <h3 class="text-sm uppercase text-gray-500 tracking-wider mb-4 font-medium">HENGDANG</h3>
+        <ul class="space-y-2">
+          {
+            hengdang.map((item) => (
+              <li>
+                <a
+                  href={item.url}
+                  class="text-gray-300 hover:text-purple-400 transition-colors text-sm flex items-center group"
+                  {...(item.external ? { target: "_blank", rel: "noopener" } : {})}
+                >
+                  {item.name}
+                  {item.external && (
+                    <span
+                      data-lucide="external-link"
+                      class="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
+                  )}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
-      <div>
-        <h3 class="text-xl font-bold mb-4">Resources</h3>
-        <div class="space-y-2">
-          <a href="/blog/our-vision" class="text-base block hover:text-gray-200">Our Vision</a>
-          <a href="/support" class="text-base block hover:text-gray-200">Support</a>
-          <a
-            href="https://www.youtube.com/playlist?list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ"
-            class="text-base block hover:text-gray-200"
-            target="_blank">Cyber Swaraj</a
-          >
-          <p class="text-base font-bold">Hengdang</p>
-          <a href="https://hengdang-protocol.github.io/" class="text-base block hover:text-gray-200"
-            >Hengdang Website</a
-          >
-          <a
-            href="https://github.com/Hengdang-Protocol/spec/"
-            class="text-base block hover:text-gray-200">Hengdang Protocol Spec</a
-          >
-          <a
-            href="https://matrix.to/#/#hengdang:matrix.org"
-            class="text-base block hover:text-gray-200">Hengdang Matrix Server</a
-          >
-        </div>
+
+      <div class="w-1/2 md:w-1/4 mb-8">
+        <h3 class="text-sm uppercase text-gray-500 tracking-wider mb-4 font-medium">CONNECT</h3>
+        <ul class="space-y-2">
+          {
+            social.map((item) => (
+              <li>
+                <a
+                  href={item.url}
+                  class="text-gray-300 hover:text-purple-400 transition-colors text-sm flex items-center group"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {item.name}
+                  <span
+                    data-lucide="external-link"
+                    class="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
-    <div class="mt-8 pt-8 border-t border-white border-opacity-20 text-center">
-      <p class="text-base">Built with love, hope, and autism</p>
+
+    <!-- Bottom credits -->
+    <div class="border-t border-gray-800 mt-4 pt-6 flex justify-center">
+      <p class="text-gray-500 text-sm font-light">
+        कर्मण्येवाधिकारस्ते मा फलेषु कदाचन | <br />
+        मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ||
+      </p>
     </div>
   </div>
 </footer>
+
+<script>
+  import { createIcons, ExternalLink } from "lucide";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    createIcons({
+      icons: {
+        ExternalLink,
+      },
+    });
+  });
+</script>

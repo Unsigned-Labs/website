@@ -1,24 +1,36 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import '../styles/fonts.css';
+import "../styles/styles.css";
+import "../styles/fonts.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Navbar/Navbar.astro";
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "Unsigned Labs - Building tools for digital self-sovereignty." } =
+  Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} - Unsigned Labs</title>
-    <link rel="icon" href="/assets/logo-bg.png" />
+    <meta name="description" content={description} />
+    <title>{title} | Unsigned Labs</title>
+    <link rel="icon" href="/assets/logo-bg.png" type="image/svg+xml" />
   </head>
-  <body class="bg-black text-white font-sans">
-    <Navbar />
-    <slot />
+  <body>
+    <div class="texture-overlay"></div>
+
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
   </body>
 </html>

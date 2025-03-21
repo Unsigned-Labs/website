@@ -2,39 +2,102 @@
 interface Props {
   href?: string;
   variant: "primary" | "secondary";
-  sectionVariant: "purple" | "black";
+  size?: "sm" | "md" | "lg";
   class?: string;
+  ariaLabel?: string;
+  download?: boolean;
+  target?: string;
+  rel?: string;
 }
 
-const { href, variant, sectionVariant, class: className = "" } = Astro.props;
+const { 
+  href, 
+  variant = "primary", 
+  size = "md", 
+  class: className = "", 
+  ariaLabel,
+  download,
+  target,
+  rel = target === "_blank" ? "noopener noreferrer" : undefined
+} = Astro.props;
 
-const getButtonClasses = () => {
-  if (variant === "primary") {
-    if (sectionVariant === "purple") {
-      return "bg-white text-black hover:bg-opacity-60";
-    }
-    return "bg-[#995BD9] text-white hover:bg-opacity-90";
-  } 
-  else {
-    if (sectionVariant === "purple") {
-      return "border border-white text-white hover:bg-white hover:bg-opacity-10";
-    }
-    return "border border-[#995BD9] text-white hover:bg-[#995BD9] hover:bg-opacity-10";
-  }
+// Variants
+const variants = {
+  primary: "bg-purple-600 text-white hover:bg-purple-700 focus:ring-purple-500/50",
+  secondary: "bg-transparent text-white border border-white/20 hover:bg-white/10 focus:ring-white/30"
 };
 
-const baseClasses = "text-base px-6 py-3 rounded-lg transition-colors text-center inline-flex items-center";
-const buttonClasses = `${baseClasses} ${getButtonClasses()} ${className}`;
+// Sizes
+const sizes = {
+  sm: "text-xs px-3 py-1.5 rounded",
+  md: "text-sm px-4 py-2 rounded-md",
+  lg: "text-base px-6 py-3 rounded-lg"
+};
 
+const baseClasses = "inline-flex items-center justify-center font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black";
+const buttonClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
+
+// Is it a link or a button?
 const isLink = !!href;
 ---
 
 {isLink ? (
-  <a href={href} class={buttonClasses}>
+  <a 
+    href={href} 
+    class={buttonClasses}
+    aria-label={ariaLabel}
+    target={target}
+    rel={rel}
+    download={download}
+  >
     <slot />
   </a>
 ) : (
-  <button class={buttonClasses}>
+  <button 
+    class={buttonClasses}
+    aria-label={ariaLabel}
+    type="button"
+  >
     <slot />
   </button>
 )}
+
+<style>
+  a, button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  a::after, button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  a:focus::after, button:focus::after {
+    animation: ripple 1s ease-out;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    20% {
+      transform: scale(25, 25);
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(40, 40);
+    }
+  }
+</style>

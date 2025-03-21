@@ -1,31 +1,48 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SectionWrapper from "../components/SectionWrapper.astro";
-import Hero from "../components/Hero.astro";
-import EventsSection from "../components/EventsSection.astro";
-import PodcastSection from "../components/PodcastSection.astro";
-import HengdangSection from "../components/HengdangSection.astro";
-import Footer from "../components/Footer.astro";
-
-const sections = [
-  { component: Hero, skipWrapper: true },
-  { component: EventsSection, variant: "purple" },
-  { component: PodcastSection, variant: "black" },
-  { component: HengdangSection, variant: "purple" },
-  { component: Footer, variant: "black" },
-];
+import Hero from "../components/Home/Hero.astro";
+import EventsSection from "../components/Home/EventsSection.astro";
+import PodcastSection from "../components/Home/PodcastSection.astro";
+import HengdangSection from "../components/Home/HengdangSection.astro";
 ---
 
-<Layout title="Home">
-  {
-    sections.map((section, index) =>
-      section.skipWrapper ? (
-        <section.component />
-      ) : (
-        <SectionWrapper variant={section.variant as "purple" | "black"}>
-          <section.component sectionVariant={section.variant as "purple" | "black"} />
-        </SectionWrapper>
-      )
-    )
-  }
+<Layout
+  title="Home"
+  description="Unsigned Labs - Building tools for digital self-sovereignty through cryptography, FOSS & open protocols"
+>
+  <Hero />
+
+  <div class="section dark">
+    <EventsSection />
+  </div>
+
+  <div class="section accent">
+    <PodcastSection />
+  </div>
+
+  <div class="section dark">
+    <HengdangSection />
+  </div>
 </Layout>
+
+<style>
+  .section .dark {
+    background-color: var(--color-background);
+    position: relative;
+  }
+
+  .section .accent {
+    background-color: var(--color-dark-accent);
+    position: relative;
+  }
+
+  .section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(123, 104, 238, .5), transparent);
+  }
+</style>

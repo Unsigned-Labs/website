@@ -2,37 +2,82 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="About">
-  <main class="min-h-screen flex items-center justify-center">
-    <div class="container mx-auto px-6 py-32">
-      <div class="max-w-2xl mx-auto space-y-8">
-        <div class="space-y-6 text-gray-300">
-          <p class="text-lg">
+<Layout title="About" description="About Unsigned Labs - Our story and mission">
+  <div class="min-h-screen py-32 flex items-center">
+    <div class="container mx-auto px-6">
+      <div class="max-w-2xl mx-auto relative">
+        <h1 class="text-5xl md:text-6xl font-light mb-16 tracking-tight">
+          <span class="opacity-30">/</span>About
+        </h1>
+
+        <div class="space-y-8 text-gray-300 about-content">
+          <p class="text-xl leading-relaxed fade-in" style="--delay: 0.1s">
             Inspired by Bitcoin and Nostr, I started Unsigned Labs to bring freedom tech to the
             masses.
           </p>
 
-          <p class="text-lg">
+          <p class="text-xl leading-relaxed fade-in" style="--delay: 0.3s">
             We tried to do a bunch of different things in 2024 but nothing panned out. We'll do a
             lot more in 2025.
           </p>
 
-          <p class="text-lg">
+          <p class="text-xl leading-relaxed fade-in" style="--delay: 0.5s">
             We have had many others join us in this journey till now. I will add their names here
             when the time is right.
           </p>
 
-          <div class="pt-6">
+          <div class="pt-10 fade-in" style="--delay: 0.7s">
             <a
               href="https://nostr.at/npub1gmm2ehusvs35zgh6pq84m8hkj4ea0ygy3c9j2e3slzhjjce3kmns5tdaz2"
-              class="text-purple-400 hover:text-purple-300 transition-colors"
+              class="text-xl text-purple-400 hover:text-purple-300 transition-colors inline-flex items-center"
               target="_blank"
             >
               — Basanta Goswami
+              <span data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></span>
             </a>
           </div>
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </Layout>
+
+<style>
+  .about-content p {
+    font-weight: 300;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInAnimation 0.8s ease forwards;
+    animation-delay: var(--delay, 0s);
+  }
+
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .text-purple {
+    color: var(--color-purple);
+  }
+</style>
+
+<script>
+  import { createIcons, ArrowUpRight } from "lucide";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    createIcons({
+      icons: {
+        ArrowUpRight,
+      },
+    });
+  });
+</script>

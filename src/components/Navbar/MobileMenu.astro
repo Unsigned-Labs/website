@@ -1,0 +1,41 @@
+---
+import type { NavItem as NavItemType } from "../../types";
+import NavItem from "./NavItem.astro";
+
+interface Props {
+  navItems: NavItemType[];
+  currentPath: string;
+}
+
+const { navItems, currentPath } = Astro.props;
+---
+
+<div id="mobileMenu" class="fixed inset-0 bg-black/98 z-50 hidden items-center justify-center">
+  <button
+    id="menuClose"
+    class="absolute top-6 right-6 p-3 text-white hover:text-purple-400 transition-colors"
+    aria-label="Close menu"
+  >
+    <span data-lucide="x" class="w-8 h-8"></span>
+  </button>
+
+  <nav class="flex flex-col items-center space-y-12">
+    {
+      navItems.map((item) => (
+        <NavItem href={item.href} text={item.text} currentPath={currentPath} isMobile={true} />
+      ))
+    }
+  </nav>
+</div>
+
+<script>
+  import { createIcons, X } from "lucide";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    createIcons({
+      icons: {
+        X,
+      },
+    });
+  });
+</script>

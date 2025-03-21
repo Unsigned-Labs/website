@@ -1,0 +1,117 @@
+---
+const features = [
+  {
+    title: "End-to-End Encryption",
+    description:
+      "Your data is encrypted before it leaves your device, ensuring no one but you can access it.",
+    icon: "Shield",
+  },
+  {
+    title: "Decentralized Storage",
+    description:
+      "No central point of failure. Store your data across multiple providers for true redundancy.",
+    icon: "Globe",
+  },
+  {
+    title: "Open Protocol",
+    description: "Fully documented, permissionless protocol that anyone can implement or extend.",
+    icon: "Code",
+  },
+  {
+    title: "Cross-platform",
+    description:
+      "Works seamlessly across mobile, desktop, and web platforms with many different implementations.",
+    icon: "Laptop",
+  },
+];
+
+const links = [
+  {
+    text: "Protocol Specification",
+    href: "https://github.com/Hengdang-Protocol/spec",
+    variant: "primary",
+  },
+  {
+    text: "Join Matrix Community",
+    href: "https://matrix.to/#/#hengdang:matrix.org",
+    variant: "secondary",
+  },
+];
+---
+
+<section class="py-24 sm:py-32 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div
+          class="inline-block mb-4 px-3 py-1 bg-purple-900/20 rounded-full border border-purple-500/20"
+        >
+          <span class="text-sm font-medium text-purple-400 tracking-wide uppercase"
+            >Our Protocol</span
+          >
+        </div>
+        <h2 class="text-4xl md:text-5xl font-light mb-6">Hengdang</h2>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          An open protocol for end-to-end encrypted cloud file storage and collaboration.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 mb-16">
+        {
+          features.map((feature) => (
+            <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-[#0f0f0f80] border border-gray-800 p-6 rounded-lg transition-all duration-300 hover:border-purple-500/30 hover:translate-y-[-2px] group">
+              <div class="mb-4 text-purple-400 opacity-80 group-hover:opacity-100 transition-opacity">
+                <span data-lucide={feature.icon} class="w-6 h-6" />
+              </div>
+              <h3 class="text-lg font-medium mb-3">{feature.title}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener"
+              class={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:translate-y-[-2px] ${
+                link.variant === "primary"
+                  ? "bg-purple-600 text-white hover:bg-purple-700"
+                  : "bg-transparent text-white border border-white/20 hover:bg-white/10"
+              }`}
+            >
+              {link.text}
+              <span data-lucide="arrow-right" class="w-4 h-4 ml-2 opacity-70" />
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="text-center">
+        <p class="text-gray-400 text-lg italic">
+          We are developing apps for mobile, desktop and the web utilizing this protocol.<br />
+          Check back in a couple of months to see what we've built.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { createIcons, Shield, Globe, Code, Laptop, ArrowRight } from "lucide";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    createIcons({
+      icons: {
+        Shield,
+        Globe,
+        Code,
+        Laptop,
+        ArrowRight,
+      },
+    });
+  });
+</script>

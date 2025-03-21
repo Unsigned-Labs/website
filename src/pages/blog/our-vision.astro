@@ -2,90 +2,111 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Our Vision">
-  <main class="min-h-screen py-16">
-    <article class="container mx-auto px-6 max-w-3xl">
-      <header class="mb-12 text-gray-400 italic">
-        <p class="border-b border-gray-700 pb-4">
-          Don't read too much into it, it's just a brain dump of some initial thoughts.
-        </p>
+<Layout title="Our Vision" description="Our vision for digital self-sovereignty through cryptography, FOSS & open protocols">
+  <div class="pt-32 pb-24">
+    <article class="container max-w-3xl mx-auto px-6">
+      <header class="mb-20 relative">
+        <div class="absolute -left-4 top-0 w-1 h-40 bg-gradient-to-b from-transparent via-purple to-transparent opacity-60"></div>
+        <p class="italic">Don't read too much into it, it's just a brain dump of some initial thoughts.</p>
+        <h1 class="text-5xl md:text-6xl font-light mb-8 tracking-tight">Our <span class="font-bold">Vision</span></h1>
       </header>
 
-      <div class="space-y-12">
-        <section>
-          <h1 class="text-4xl font-bold mb-6">Our Vision</h1>
-          <p class="mb-6">
+      <div class="space-y-16 article-content">
+        <section class="fade-in reveal">
+          <p class="text-xl leading-relaxed mb-6">
             People don't have control over their digital lives. Your photos are stored on someone
             else's servers. Your messages go through someone else's infrastructure. Your devices
-            have backdoors you can't control. Your money is sitting in someone else's database. Even
-            things you don't think about often—like IP addresses and domain names—are centrally
-            controlled. You are <em>fucked</em>.
+            have backdoors you can't control. Your money is sitting in someone else's database.
           </p>
 
-          <p>
+          <p class="text-xl leading-relaxed mb-6">
+            Even things you don't think about often—like IP addresses and domain names—are centrally
+            controlled. <span class="text-purple font-medium">You are <em>fucked</em>.</span>
+          </p>
+
+          <p class="text-xl leading-relaxed">
             We are focused on building tools for digital self-sovereignty. Our ultimate goal is to
             empower millions, if not billions, of individuals and businesses to be sovereign.
           </p>
         </section>
 
-        <section>
-          <h2 class="text-3xl font-bold mb-6">A Cypherpunk's Manifesto</h2>
-          <p>
-            "Privacy is necessary for an open society in the electronic age." These words opened <em>A
-            Cypherpunk's Manifesto</em> in 1993, declaring that cryptography would defend our privacy
-            where laws won't. Bitcoin finally gave us what cypherpunks dreamed of for decades:
-            "private money" that can't be controlled or censored. It's now enabling other sovereign
-            solutions like Nostr to flourish. We are continuing down this same path.
+        <section class="fade-in reveal">
+          <h2 class="text-3xl font-light mb-6 flex items-center">
+            <span class="text-purple font-mono text-sm mr-3">/01</span>
+            A Cypherpunk's Manifesto
+          </h2>
+          <blockquote class="pl-4 border-l border-purple my-8 py-2">
+            <p class="text-xl italic font-light">
+              "Privacy is necessary for an open society in the electronic age."
+            </p>
+          </blockquote>
+          <p class="text-lg leading-relaxed">
+            These words opened <em>A Cypherpunk's Manifesto</em> in 1993, declaring that cryptography 
+            would defend our privacy where laws won't. Bitcoin finally gave us what cypherpunks 
+            dreamed of for decades: "private money" that can't be controlled or censored. 
+            It's now enabling other sovereign solutions like Nostr to flourish. 
+            We are continuing down this same path.
           </p>
         </section>
 
-        <section>
-          <h2 class="text-3xl font-bold mb-6">Protocols Over Platforms</h2>
-          <p class="mb-4">Here are some fundamental principles we believe in:</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>Free speech platforms can not exist. Only free speech protocols can exist.</span>
+        <section class="fade-in reveal">
+          <h2 class="text-3xl font-light mb-6 flex items-center">
+            <span class="text-purple font-mono text-sm mr-3">/02</span>
+            Protocols Over Platforms
+          </h2>
+          <p class="text-lg leading-relaxed mb-8">
+            Here are some fundamental principles we believe in:
+          </p>
+          <ul>
+            <li class="flex">
+              <span class="text-purple mr-4">•</span>
+              <p>Free speech platforms can not exist. Only free speech protocols can exist.</p>
             </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>You can build centralized services on top of decentralized protocols, but you can't do the opposite.</span>
+            <li class="flex">
+              <span class="text-purple mr-4">•</span>
+              <p>You can build centralized services on top of decentralized protocols, but you can't do the opposite.</p>
             </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>Protocols enable interoperability among different applications. While this is a challenging problem at the application level, Nostr is one of the first to truly tackle it.</span>
+            <li class="flex">
+              <span class="text-purple mr-4">•</span>
+              <p>Protocols enable interoperability among different applications. While this is a challenging problem at the application level, Nostr is one of the first to truly tackle it.</p>
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2 class="text-3xl font-bold mb-6">Cryptography</h2>
-          <p class="mb-4">
-            "Cryptography is a tool for turning a whole swath of problems into key management
-            problems." It serves two essential functions:
+        <section class="fade-in reveal">
+          <h2 class="text-3xl font-light mb-6 flex items-center">
+            <span class="text-purple font-mono text-sm mr-3">/03</span>
+            Cryptography
+          </h2>
+          <p class="text-lg leading-relaxed mb-8">
+            "Cryptography is a tool for turning a whole swath of problems into key management problems." 
+            It serves two essential functions:
           </p>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>Sign public data so everyone knows it's authentic.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>Encrypt private data so only the right people can access it.</span>
-            </li>
-          </ul>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-dark p-6 rounded-lg border border-gray-800 hover:border-purple transition-colors">
+              <h3 class="text-xl mb-3 font-medium">Sign</h3>
+              <p>Sign public data so everyone knows it's authentic.</p>
+            </div>
+            <div class="bg-dark p-6 rounded-lg border border-gray-800 hover:border-purple transition-colors">
+              <h3 class="text-xl mb-3 font-medium">Encrypt</h3>
+              <p>Encrypt private data so only the right people can access it.</p>
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2 class="text-3xl font-bold mb-6">FOSS (Free and Open Source Software)</h2>
-          <p class="mb-6">
+        <section class="fade-in reveal">
+          <h2 class="text-3xl font-light mb-6 flex items-center">
+            <span class="text-purple font-mono text-sm mr-3">/04</span>
+            FOSS (Free and Open Source Software)
+          </h2>
+          <p class="text-lg leading-relaxed mb-6">
             Most privacy-focused or self-hostable software (or FOSS alternatives to popular
             proprietary software) is subpar. It's often ugly, hard to use, and feels like it was
             built in the '90s. Why? Because it's typically created by developers in their spare
             time.
           </p>
 
-          <p>
+          <p class="text-lg leading-relaxed">
             The solution isn't complicated: build a proper organization (business) around your
             open-source software. Companies and organizations like Signal, Proton, Automattic
             (WordPress), Red Hat, and Comma AI (OpenPilot) have all done something similar. Good
@@ -93,9 +114,12 @@ import Layout from "../../layouts/Layout.astro";
           </p>
         </section>
 
-        <section>
-          <h2 class="text-3xl font-bold mb-6">Hardware</h2>
-          <p class="mb-6">
+        <section class="fade-in reveal">
+          <h2 class="text-3xl font-light mb-6 flex items-center">
+            <span class="text-purple font-mono text-sm mr-3">/05</span>
+            Hardware
+          </h2>
+          <p class="text-lg leading-relaxed mb-6">
             Current computers—and especially phones—are essentially surveillance devices with
             digital crack built-in. Intel and AMD CPUs have backdoors. Every smartphone is a
             tracking beacon. The entire telecom infrastructure is insecure as well. Those home
@@ -103,16 +127,19 @@ import Layout from "../../layouts/Layout.astro";
             your house.
           </p>
 
-          <p>
+          <p class="text-lg leading-relaxed">
             We need hardware that's actually trustworthy. Not because someone told us to trust it,
             but because we can verify it ourselves. Open hardware specifications, transparent
             supply chains, and user-controlled security features are crucial.
           </p>
         </section>
 
-        <section>
-          <h2 class="text-3xl font-bold mb-6">Software Design Principles</h2>
-          <p class="mb-6">
+        <section class="fade-in reveal">
+          <h2 class="text-3xl font-light mb-6 flex items-center">
+            <span class="text-purple font-mono text-sm mr-3">/06</span>
+            Software Design Principles
+          </h2>
+          <p class="text-lg leading-relaxed mb-8">
             This vision of digital sovereignty isn't just about privacy or security—it's about
             fundamentally reshaping the relationship between individuals and their digital
             existence. One of the first products we are building is a file-hosting and
@@ -120,48 +147,101 @@ import Layout from "../../layouts/Layout.astro";
             free and open-source.
           </p>
 
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span><strong>Local-first:</strong> Your data lives on your devices first, cloud second.</span>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-dark p-6 rounded-lg border border-gray-800 hover:border-purple transition-colors">
+              <h3 class="text-xl mb-3 font-medium">Local-first</h3>
+              <p>Your data lives on your devices first, cloud second.</p>
+            </div>
+            <div class="bg-dark p-6 rounded-lg border border-gray-800 hover:border-purple transition-colors">
+              <h3 class="text-xl mb-3 font-medium">Unhosted</h3>
+              <p>The app runs without depending on any servers.</p>
+            </div>
+            <div class="bg-dark p-6 rounded-lg border border-gray-800 hover:border-purple transition-colors">
+              <h3 class="text-xl mb-3 font-medium">Credible Exit</h3>
+              <p>You can always take your data and identity and move to another place.</p>
+            </div>
+            <div class="bg-dark p-6 rounded-lg border border-gray-800 hover:border-purple transition-colors">
+              <h3 class="text-xl mb-3 font-medium">Plain Text, Please</h3>
+              <p>Data is stored in plain text (.txt or .md), not some proprietary binary format.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="fade-in reveal">
+          <h2 class="text-3xl font-light mb-6 flex items-center">
+            <span class="text-purple font-mono text-sm mr-3">/07</span>
+            Future Explorations
+          </h2>
+          <p class="text-lg leading-relaxed mb-8">
+            We're continuing to expand our vision into these areas:
+          </p>
+          <ul class="space-y-6">
+            <li class="flex">
+              <span class="text-purple mr-4">•</span>
+              <p>Web of Trust vs The Algorithm</p>
             </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span><strong>Unhosted:</strong> The app runs without depending on any servers.</span>
+            <li class="flex">
+              <span class="text-purple mr-4">•</span>
+              <p>Issues with decentralization when it comes to Search and AI</p>
             </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span><strong>Credible Exit:</strong> You can always take your data and identity and move to another place.</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span><strong>Plain Text, Please:</strong> Data is stored in plain text (.txt or .md), not some proprietary binary format.</span>
+            <li class="flex">
+              <span class="text-purple mr-4">•</span>
+              <p>How FOSS can be made better by taking help from UI/UX designers, and different FOSS apps speaking the same protocol (network effect)</p>
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2 class="text-3xl font-bold mb-6">More Points to Add</h2>
-          <ul class="space-y-2">
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>Web of Trust vs The Algorithm</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>Issues with decentralization when it comes to Search and AI</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-3">•</span>
-              <span>How FOSS can be made better by taking help from UI/UX designers, and different FOSS apps speaking the same protocol (network effect)</span>
-            </li>
-          </ul>
-        </section>
-
-        <p class="text-xl font-medium mt-12">
+        <p class="text-2xl font-light text-center py-12 text-purple">
           Privacy and censorship resistance for the sovereign individual
         </p>
       </div>
     </article>
-  </main>
+  </div>
 </Layout>
+
+<script>
+  // Reveal animations on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const reveal = () => {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add('active');
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', reveal);
+    reveal(); // Initial check on load
+  });
+</script>
+
+<style>
+  .article-content p {
+    font-weight: 300;
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .bg-dark {
+    background-color: rgba(15, 15, 15, 0.5);
+  }
+  
+  .text-purple {
+    color: var(--color-purple);
+  }
+</style>

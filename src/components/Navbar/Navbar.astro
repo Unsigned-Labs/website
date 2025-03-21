@@ -1,0 +1,70 @@
+---
+import type { NavItem as NavItemType } from "../../types";
+import NavItem from "./NavItem.astro";
+import MobileMenu from "./MobileMenu.astro";
+
+const navItems: NavItemType[] = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/blog/our-vision", text: "Our Vision" },
+  { href: "/support", text: "Support" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-purple/10 transition-all duration-300"
+>
+  <nav class="container mx-auto px-6 py-4 md:py-6">
+    <div class="flex items-center justify-between">
+      <a href="/" class="flex items-center hover:opacity-80 transition-all duration-300 p-3">
+        <img src="/assets/logo.png" alt="Unsigned Logo" class="h-8 w-auto"/>
+      </a>
+
+      <div class="hidden md:flex items-center space-x-12">
+        {
+          navItems.map((item) => (
+            <NavItem href={item.href} text={item.text} currentPath={currentPath} />
+          ))
+        }
+      </div>
+
+      <button
+        id="menuToggle"
+        class="md:hidden p-3 -mr-3 text-white hover:text-purple-400 transition-colors"
+        aria-label="Toggle menu"
+      >
+        <span data-lucide="menu" class="w-8 h-8"></span>
+      </button>
+    </div>
+  </nav>
+
+  <MobileMenu navItems={navItems} currentPath={currentPath} />
+</header>
+
+<style>
+  .header-hidden {
+    transform: translateY(-100%);
+  }
+
+  header {
+    transition: transform 0.3s ease;
+  }
+</style>
+
+<script>
+  import { initHeaderScroll, initMobileMenu } from "../../scripts/header";
+  import { createIcons, Menu } from "lucide";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    createIcons({
+      icons: {
+        Menu,
+      },
+    });
+
+    initHeaderScroll();
+    initMobileMenu();
+  });
+</script>

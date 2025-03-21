@@ -1,0 +1,87 @@
+<section class="py-16 md:py-32 relative overflow-hidden" id="events-section">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div
+      class="absolute -top-1/2 -right-1/4 w-1/2 h-full bg-purple-900/5 rounded-full filter blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute -bottom-1/2 -left-1/4 w-1/2 h-full bg-purple-900/5 rounded-full filter blur-3xl"
+    >
+    </div>
+  </div>
+
+  <div class="container relative z-10 mx-auto px-4 sm:px-6">
+    <div
+      class="flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-16 items-center max-w-6xl mx-auto"
+    >
+      <div class="w-full md:col-span-5 space-y-6 sm:space-y-8">
+        <div>
+          <div
+            class="inline-block mb-4 px-3 py-1 bg-purple-900/20 rounded-full border border-purple-500/20"
+          >
+            <span class="text-sm font-medium text-purple-400 tracking-wide uppercase">Events</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4">
+            Unfuck the <span class="text-purple-400 font-medium">Internet</span>
+          </h2>
+          <p class="text-lg sm:text-xl leading-relaxed">
+            Surveillance has turned the Internet into a panopticon. We're here to fight back. Join
+            us for a gathering dedicated to digital privacy, open-source technologies, and
+            reclaiming control of our digital lives.
+          </p>
+          <p class="text-lg sm:text-xl mt-4">Here is what we discuss:</p>
+        </div>
+
+        <ul class="space-y-3 list-disc pl-5">
+          <li class="text-base sm:text-lg">Censorship resistant public communication</li>
+          <li class="text-base sm:text-lg">Privacy-preserving technologies for personal data</li>
+          <li class="text-base sm:text-lg">Other open-source tools for digital sovereignty</li>
+        </ul>
+
+        <div>
+          <a
+            href="https://lu.ma/unsigned"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary inline-flex items-center w-full sm:w-auto justify-center"
+          >
+            View All Events
+            <span data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full md:col-span-7 relative mt-10">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-purple-900/70 to-transparent transform -rotate-2 rounded-2xl"
+        >
+        </div>
+
+        <div class="relative z-10 bg-black p-[1px] rounded-xl overflow-hidden">
+          <iframe
+            src="https://lu.ma/embed/event/evt-VtseKbGiCaUEIUD/simple"
+            width="100%"
+            height="400px"
+            class="rounded-lg w-full h-[500px]"
+            allowfullscreen
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { createIcons, ArrowUpRight } from "lucide";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    createIcons({
+      icons: {
+        ArrowUpRight,
+      },
+    });
+  });
+</script>
