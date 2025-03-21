@@ -1,4 +1,14 @@
-<section class="py-16">
+---
+import Button from './Button.astro';
+
+interface Props {
+  sectionVariant: "purple" | "black";
+}
+
+const { sectionVariant } = Astro.props;
+---
+
+<section class="py-24">
   <div class="container mx-auto px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-6 text-center">Hengdang</h2>
@@ -6,20 +16,22 @@
         An open protocol for end-to-end encrypted cloud file storage and collaboration.
       </p>
       <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
-        <a
-          href="https://github.com/Hengdang-Protocol/spec"
-          class="text-base bg-[#995BD9] text-white px-6 py-3 rounded-lg hover:bg-opacity-90 text-center"
+        <Button 
+          href="https://github.com/Hengdang-Protocol/spec" 
+          variant="primary" 
+          sectionVariant={sectionVariant}
         >
           Checkout the Protocol Spec
-        </a>
-        <a
-          href="https://matrix.to/#/#hengdang:matrix.org"
-          class="text-base border border-[#995BD9] text-white px-6 py-3 rounded-lg hover:bg-[#995BD9] hover:bg-opacity-10 text-center"
+        </Button>
+        <Button 
+          href="https://matrix.to/#/#hengdang:matrix.org" 
+          variant="secondary" 
+          sectionVariant={sectionVariant}
         >
           Visit our Matrix Room
-        </a>
+        </Button>
       </div>
-      <p class="text-base text-center text-gray-400">
+      <p class="text-base text-center">
         We are developing apps for mobile, desktop and the web utilizing this protocol. Check back
         in a couple of months to see what we've got.
       </p>

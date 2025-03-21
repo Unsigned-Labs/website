@@ -1,16 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionWrapper from "../components/SectionWrapper.astro";
 import Hero from "../components/Hero.astro";
 import EventsSection from "../components/EventsSection.astro";
 import PodcastSection from "../components/PodcastSection.astro";
 import HengdangSection from "../components/HengdangSection.astro";
 import Footer from "../components/Footer.astro";
+
+const sections = [
+  { component: Hero, skipWrapper: true },
+  { component: EventsSection, variant: "purple" },
+  { component: PodcastSection, variant: "black" },
+  { component: HengdangSection, variant: "purple" },
+  { component: Footer, variant: "black" },
+];
 ---
 
 <Layout title="Home">
-  <Hero />
-  <EventsSection />
-  <PodcastSection />
-  <HengdangSection />
-  <Footer />
+  {
+    sections.map((section, index) =>
+      section.skipWrapper ? (
+        <section.component />
+      ) : (
+        <SectionWrapper variant={section.variant as "purple" | "black"}>
+          <section.component sectionVariant={section.variant as "purple" | "black"} />
+        </SectionWrapper>
+      )
+    )
+  }
 </Layout>

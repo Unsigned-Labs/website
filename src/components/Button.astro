@@ -1,0 +1,40 @@
+---
+interface Props {
+  href?: string;
+  variant: "primary" | "secondary";
+  sectionVariant: "purple" | "black";
+  class?: string;
+}
+
+const { href, variant, sectionVariant, class: className = "" } = Astro.props;
+
+const getButtonClasses = () => {
+  if (variant === "primary") {
+    if (sectionVariant === "purple") {
+      return "bg-white text-black hover:bg-opacity-60";
+    }
+    return "bg-[#995BD9] text-white hover:bg-opacity-90";
+  } 
+  else {
+    if (sectionVariant === "purple") {
+      return "border border-white text-white hover:bg-white hover:bg-opacity-10";
+    }
+    return "border border-[#995BD9] text-white hover:bg-[#995BD9] hover:bg-opacity-10";
+  }
+};
+
+const baseClasses = "text-base px-6 py-3 rounded-lg transition-colors text-center inline-flex items-center";
+const buttonClasses = `${baseClasses} ${getButtonClasses()} ${className}`;
+
+const isLink = !!href;
+---
+
+{isLink ? (
+  <a href={href} class={buttonClasses}>
+    <slot />
+  </a>
+) : (
+  <button class={buttonClasses}>
+    <slot />
+  </button>
+)}

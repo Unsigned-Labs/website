@@ -1,5 +1,6 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import '../styles/fonts.css';
 
 interface Props {
   title: string;
@@ -16,7 +17,7 @@ const { title } = Astro.props;
     <title>{title} - Unsigned Labs</title>
     <link rel="icon" href="/assets/logo-bg.png" />
   </head>
-  <body class="bg-black text-white">
+  <body class="bg-black text-white font-sans">
     <Navbar />
     <slot />
   </body>
