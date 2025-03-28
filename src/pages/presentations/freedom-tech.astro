@@ -9,41 +9,30 @@ import Layout from "../../layouts/Layout.astro";
         <div class="slide-content">
           <div class="grid-lines"></div>
           <h1>What Makes Something <br/><span class="text-purple font-bold">Freedom Tech?</span></h1>
-          <p class="text-xl mt-8 text-gray-400">Understanding the principles of digital self-sovereignty</p>
+          <p class="text-xl mt-8">Understanding Digital Self-Sovereignty</p>
         </div>
       </section>
 
       <section class="slide" id="slide-2">
         <div class="slide-content">
-          <h2 class="text-3xl font-light mb-8 flex items-center">
-            A Cypherpunk's Vision
-          </h2>
-          <blockquote class="pl-4 border-l-2 border-purple my-8 py-2">
-            <p class="text-2xl italic font-light mb-4">
-              "Privacy is necessary for an open society in the electronic age."
-            </p>
-          </blockquote>
-          <div class="grid grid-cols-2 gap-8 mt-12">
-            <div class="bg-dark p-6 rounded-lg border border-gray-800">
-              <h3 class="text-xl mb-4 text-purple-400">The Problems</h3>
-              <ul class="space-y-1">
-                <li class="flex items-start">
-                  <span class="text-purple mr-4">•</span>
-                  <p>Your photos on someone else's servers</p>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-purple mr-4">•</span>
-                  <p>Messages through others' infrastructure</p>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-purple mr-4">•</span>
-                  <p>Money in someone else's database</p>
-                </li>
+          <h2 class="text-3xl font-light mb-8">Core Requirements</h2>
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Essential</h3>
+              <ul class="space-y-2">
+                <li>• Sovereign Identity</li>
+                <li>• Signed Public Data</li>
+                <li>• Encrypted Private Data</li>
+                <li>• Self-hostability</li>
+                <li>• Cryptographic Data Integrity</li>
               </ul>
             </div>
-            <div class="bg-dark p-6 rounded-lg border border-gray-800">
-              <h3 class="text-xl mb-4 text-purple-400">The Solutions</h3>
-              <p>Bitcoin, Nostr, TOR, Reticulum, etc...</p>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Bonus Features</h3>
+              <ul class="space-y-2">
+                <li>• Local First</li>
+                <li>• Good Architecture</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -51,117 +40,203 @@ import Layout from "../../layouts/Layout.astro";
 
       <section class="slide" id="slide-3">
         <div class="slide-content">
-          <h2 class="text-3xl font-light mb-8 flex items-center">
-            Protocols vs Platforms
-          </h2>
+          <h2 class="text-3xl font-light mb-8">1. Sovereign Identity</h2>
+          <p class="mb-8">Can I generate my identifier without permission?</p>
+          
+          <div class="comparison-diagram mb-12">
+            <div class="diagram-box">
+              <div class="diagram-icon">🔑</div>
+              <p>Self-generated</p>
+              <p class="text-sm opacity-70">No permission needed</p>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="diagram-box" style="border-color: rgba(239, 68, 68, 0.2);">
+              <div class="diagram-icon">👥</div>
+              <p>Assigned by others</p>
+              <p class="text-sm opacity-70">Permission required</p>
+            </div>
+          </div>
+
           <div class="grid grid-cols-2 gap-12">
             <div class="relative">
               <div class="diagram-container">
-                <div class="diagram platform-diagram">
-                  <div class="platform-box">
-                    <h3 class="text-xl mb-4">Platform A</h3>
-                    <div class="users">Users</div>
-                    <div class="data">Data</div>
-                  </div>
-                  <div class="platform-box">
-                    <h3 class="text-xl mb-4">Platform B</h3>
-                    <div class="users">Users</div>
-                    <div class="data">Data</div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div>
+                    <div class="tech-name">Nostr pubkey (npub)</div>
+                    <div class="tech-problem">npub1unsigned...</div>
                   </div>
                 </div>
-                <p class="text-center mt-4 text-red-400">❌ Data Silos</p>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div>
+                    <div class="tech-name">PGP key</div>
+                    <div class="tech-problem">3FA8 A49C 4E07...</div>
+                  </div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div>
+                    <div class="tech-name">Bitcoin address</div>
+                    <div class="tech-problem">bc1q9h6...</div>
+                  </div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div>
+                    <div class="tech-name">Tor .onion address</div>
+                    <div class="tech-problem">g3yv5hk...123.onion</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="relative">
-              <div class="diagram-container">
-                <div class="diagram protocol-diagram">
-                  <div class="protocol-layer">
-                    <h3 class="text-xl mb-4">Open Protocol</h3>
-                    <div class="shared-network"></div>
-                  </div>
-                  <div class="apps-layer">
-                    <div class="app">App A</div>
-                    <div class="app">App B</div>
-                    <div class="app">App C</div>
+              <div class="diagram-container red-border">
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div>
+                    <div class="tech-name">Email address</div>
+                    <div class="tech-problem">basantagoswami@unsigned.in</div>
                   </div>
                 </div>
-                <p class="text-center mt-4 text-green-400">✓ Data Flows Freely</p>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div>
+                    <div class="tech-name">Mastodon handle</div>
+                    <div class="tech-problem">@nvk@bitcoinhackers.org</div>
+                  </div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div>
+                    <div class="tech-name">Twitter/X handle</div>
+                    <div class="tech-problem">@basanta_goswami</div>
+                  </div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div>
+                    <div class="tech-name">IP address</div>
+                    <div class="tech-problem">192.168.1.18</div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-3-5">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Permission Hierarchy Example</h2>
+          <p class="mb-8">How @basanta_goswami requires permission from multiple layers:</p>
+
+          <div class="flow-diagram mb-12">
+            <div class="flow-item">
+              <div class="text-xl">ICANN</div>
+              <div class="text-sm opacity-70">Controls global DNS system</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Registry Operators (Verisign)</div>
+              <div class="text-sm opacity-70">Operates .com TLD infrastructure</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Domain Registrars (GoDaddy)</div>
+              <div class="text-sm opacity-70">Sells domains to end users</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Twitter Inc.</div>
+              <div class="text-sm opacity-70">Owns twitter.com domain</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">End User</div>
+              <div class="text-sm opacity-70">@basanta_goswami</div>
+            </div>
+          </div>
+
+          <div class="bg-dark p-6 rounded-lg mt-8">
+            <p class="text-xl mb-4">Each layer needs permission from above:</p>
+            <ul class="space-y-2 text-gray-400">
+              <li>• ICANN controls the root DNS system</li>
+              <li>• Verisign operates .com under ICANN contract</li>
+              <li>• GoDaddy sells domains via Verisign</li>
+              <li>• Twitter bought twitter.com from a registrar</li>
+              <li>• Finally, Twitter assigns usernames</li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="slide" id="slide-4">
         <div class="slide-content">
-          <h2 class="text-3xl font-light mb-8 flex items-center">
-            Cryptography: The Foundation
-          </h2>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="bg-dark p-6 rounded-lg border border-gray-800">
-              <h3 class="text-xl mb-4 text-purple-400">Sign</h3>
-              <div class="crypto-diagram sign-diagram">
-                <div class="key">Private Key</div>
-                <div class="arrow">↓</div>
-                <div class="data">Public Data</div>
-                <div class="arrow">↓</div>
-                <div class="result">Verified Authenticity</div>
-              </div>
-            </div>
-            <div class="bg-dark p-6 rounded-lg border border-gray-800">
-              <h3 class="text-xl mb-4 text-purple-400">Encrypt</h3>
-              <div class="crypto-diagram encrypt-diagram">
-                <div class="key">Public Key</div>
-                <div class="arrow">↓</div>
-                <div class="data">Private Data</div>
-                <div class="arrow">↓</div>
-                <div class="result">Only Recipient Can Read</div>
-              </div>
-            </div>
+          <h2 class="text-3xl font-light mb-8">Human Readable Names</h2>
+
+          <div class="flow-diagram mb-12">
+            <div class="flow-item">Cryptographic Identity</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">Local Contact Names</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">Optional Global Names</div>
+          </div>
+
+          <div class="text-sm opacity-75">
+            <p class="mb-4">Contact Names vs Globally Unique Names</p>
+            <ul class="space-y-4">
+              <li>• Globally unique names always need a central coordinator</li>
+              <li>• Cryptographic identifiers aren't human friendly</li>
+              <li>• Can use centralized names as overlay on pubkeys (lightning address)</li>
+              <li>• Best: Use contact names to refer to pubkeys (like phone contacts)</li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="slide" id="slide-5">
         <div class="slide-content">
-          <h2 class="text-3xl font-light mb-8 flex items-center">
-            Software Design Principles
-          </h2>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="principle-card">
-              <h3 class="text-xl mb-3">Local-first</h3>
-              <p>Your data lives on your devices first, cloud second</p>
-              <div class="principle-diagram">
-                <div class="device">📱</div>
-                <div class="arrow">→</div>
-                <div class="cloud">☁️</div>
+          <h2 class="text-3xl font-light mb-8">2. Signed Public Data</h2>
+          <p class="mb-8">Are we signing our data using private keys for authenticity?</p>
+          
+          <div class="comparison-diagram mb-12">
+            <div class="diagram-box">
+              <div class="diagram-icon">✍️</div>
+              <p>Cryptographically Signed</p>
+              <p class="text-sm opacity-70">Verifiable authenticity</p>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="diagram-box" style="border-color: rgba(239, 68, 68, 0.2);">
+              <div class="diagram-icon">❓</div>
+              <p>Unsigned Data</p>
+              <p class="text-sm opacity-70">No proof of origin</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-12">
+            <div class="relative">
+              <div class="diagram-container">
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Nostr events</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Bitcoin transactions</div>
+                </div>
               </div>
             </div>
-            <div class="principle-card">
-              <h3 class="text-xl mb-3">Unhosted</h3>
-              <p>Apps run without depending on servers</p>
-              <div class="principle-diagram">
-                <div class="device">💻</div>
-                <div class="arrow">↔️</div>
-                <div class="device">💻</div>
-              </div>
-            </div>
-            <div class="principle-card">
-              <h3 class="text-xl mb-3">Credible Exit</h3>
-              <p>Take your data and identity elsewhere</p>
-              <div class="principle-diagram">
-                <div class="data">📦</div>
-                <div class="arrow">↔️</div>
-                <div class="apps">🔄</div>
-              </div>
-            </div>
-            <div class="principle-card">
-              <h3 class="text-xl mb-3">Plain Text</h3>
-              <p>Data in readable formats, not proprietary</p>
-              <div class="principle-diagram">
-                <div class="text">.txt</div>
-                <div class="arrow">✓</div>
-                <div class="binary">.bin</div>
+            <div class="relative">
+              <div class="diagram-container red-border">
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Websites</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Blogs</div>
+                </div>
               </div>
             </div>
           </div>
@@ -170,48 +245,241 @@ import Layout from "../../layouts/Layout.astro";
 
       <section class="slide" id="slide-6">
         <div class="slide-content">
-          <h2 class="text-3xl font-light mb-8 flex items-center">
-            Examples in Practice
-          </h2>
+          <h2 class="text-3xl font-light mb-8">3. Encrypted Private Data</h2>
+          <p class="mb-8">Are we encrypted our data using a private keys we control?</p>
           <div class="grid grid-cols-2 gap-12">
-            <div>
-              <h3 class="text-2xl mb-6 text-purple-400">Freedom Tech ✓</h3>
-              <div class="bg-dark p-6 rounded-lg border border-gray-800">
-                <ul class="space-y-4">
-                  <li class="flex items-start">
-                    <span class="text-green-400 mr-4">✓</span>
-                    <p>Bitcoin: Sovereign money network</p>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-green-400 mr-4">✓</span>
-                    <p>Nostr: Decentralized social protocol</p>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-green-400 mr-4">✓</span>
-                    <p>PGP: End-to-end encryption</p>
-                  </li>
-                </ul>
+            <div class="relative">
+              <div class="diagram-container">
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">WhatsApp</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Signal</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Proton Drive</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">HTTPS</div>
+                  <div class="tech-problem">While talking to server</div>
+                </div>
               </div>
             </div>
-            <div>
-              <h3 class="text-2xl mb-6 text-red-400">Not Freedom Tech ✗</h3>
-              <div class="bg-dark p-6 rounded-lg border border-gray-800">
-                <ul class="space-y-4">
-                  <li class="flex items-start">
-                    <span class="text-red-400 mr-4">✗</span>
-                    <p>Mastodon: Federated platforms</p>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-red-400 mr-4">✗</span>
-                    <p>Web5: App-specific protocols</p>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-red-400 mr-4">✗</span>
-                    <p>Signal: Centralized messaging</p>
-                  </li>
-                </ul>
+            <div class="relative">
+              <div class="diagram-container red-border">
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Google Drive</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Telegram</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">HTTP</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">TCP/IP</div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-7">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">4. Self-hostability</h2>
+          <p class="mb-8">Where is your data hosted?</p>
+          <div class="grid grid-cols-2 gap-12">
+            <div class="relative">
+              <div class="diagram-container">
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Bitcoin node</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Lightning node</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Nostr relay</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Cryptpad</div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="diagram-container red-border">
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Signal</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Proton Drive</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-8">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">5. Cryptographic Data Integrity</h2>
+          <p class="mb-8">Are your content identified by hashes?</p>
+
+          <div class="bg-dark p-6 rounded-lg mb-8">
+            <p class="text-xl mb-4">Why we need this:</p>
+            <ul class="space-y-2 text-gray-400">
+              <li>• Without hashes, content can be changed</li>
+              <li>• References to content can be lost or hijacked</li>
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-2 gap-12">
+            <div class="relative">
+              <div class="diagram-container">
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">IPFS</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Nostr (event id)</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Git commits</div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="diagram-container red-border">
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Files in S3</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Tweets</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Blog post links</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-8-5">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">The Twitter Handle Problem</h2>
+          <div class="flow-diagram mb-12">
+            <div class="flow-item">
+              <div class="text-xl">@fiatjaf deletes account</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Someone else registers @fiatjaf</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Old links now point to new account</div>
+            </div>
+          </div>
+
+          <div class="bg-dark p-6 rounded-lg mt-8">
+            <p class="text-xl mb-4">Why this happens:</p>
+            <ul class="space-y-2 text-gray-400">
+              <li>• Usernames can be recycled</li>
+              <li>• Links use handles instead of permanent IDs</li>
+              <li>• No cryptographic proof of original identity</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-9">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">6. FOSS</h2>
+          <p class="mb-8">Can we check and verify the app's source code to make sure it does what it claims?</p>
+
+          <div class="bg-dark p-6 rounded-lg mb-8">
+            <p class="text-xl mb-4">License matters:</p>
+            <ul class="space-y-2 text-gray-400">
+              <li>• MIT/GPL etc encourage code review</li>
+              <li>• Community can verify security claims</li>
+              <li>• Others can build upon and improve the code</li>
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-2 gap-12">
+            <div class="relative">
+              <div class="diagram-container">
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Most Nostr clients</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div class="tech-name">Bitcoin wallets</div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="diagram-container red-border">
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Keet</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Yakihonne</div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div class="tech-name">Most corporate software</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-10">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Bonus: Local First</h2>
+          <p class="mb-8">Can our app work without internet?</p>
+          <div class="text-center">
+            <p class="text-xl mb-4">Many Nostr apps don't, but they theoretically can</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-11">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Architecture Debates</h2>
+          <div class="text-center">
+            <ul class="text-left space-y-4 mt-8">
+              <li>• You might not like IPFS for trying to decentralize storage itself</li>
+              <li>• You might not like Nostr for using websockets and JSON</li>
+              <li>• You might not like Bitcoin for being too limited</li>
+              <li>• You might not like altcoins because Bitcoin already solved digital scarcity</li>
+            </ul>
+            <p class="mt-8 text-purple-400">But once we have established the other points, this is the one we can argue about</p>
           </div>
         </div>
       </section>
@@ -227,7 +495,7 @@ import Layout from "../../layouts/Layout.astro";
     </div>
 
     <div class="slide-counter">
-      <span id="currentSlideNum">1</span>/<span id="totalSlides">6</span>
+      <span id="currentSlideNum">1</span>/<span id="totalSlides">13</span>
     </div>
   </div>
 </Layout>
@@ -268,8 +536,8 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   .slide-content {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 2rem;
   }
 
   .bg-dark {
@@ -345,7 +613,7 @@ import Layout from "../../layouts/Layout.astro";
     border: 1px solid rgba(123, 104, 238, 0.2);
     padding: 1.5rem;
     border-radius: 0.5rem;
-    min-height: 400px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
   }
@@ -440,6 +708,202 @@ import Layout from "../../layouts/Layout.astro";
   .slide.active .diagram-container {
     animation-play-state: running;
   }
+
+  .tech-card {
+    background: rgba(15, 15, 15, 0.5);
+    border: 1px solid rgba(123, 104, 238, 0.2);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .tech-card:hover {
+    border-color: var(--color-purple);
+    transform: translateY(-2px);
+  }
+
+  .tech-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-desc {
+    color: var(--color-purple);
+    font-size: 0.875rem;
+  }
+
+  .red-border {
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+
+  .yellow-border {
+    border-color: rgba(234, 179, 8, 0.2);
+  }
+
+  .tech-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .tech-item:last-child {
+    border-bottom: none;
+  }
+
+  .tech-name {
+    font-size: 1.25rem !important;
+  }
+
+  .tech-problem {
+    font-size: 1rem !important;
+  }
+
+  ul li {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+  }
+
+  .diagram-container {
+    min-height: 300px;
+    padding: 2rem;
+  }
+
+  .flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .flow-item {
+    background: rgba(123, 104, 238, 0.1);
+    border: 1px solid var(--color-purple);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    position: relative;
+  }
+
+  .flow-arrow {
+    color: var(--color-purple);
+    font-size: 1.5rem;
+  }
+
+  .comparison-diagram {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .vs-divider {
+    font-size: 2rem;
+    color: var(--color-purple);
+    opacity: 0.5;
+  }
+
+  .diagram-box {
+    background: rgba(15, 15, 15, 0.5);
+    border: 1px solid rgba(123, 104, 238, 0.2);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .diagram-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 3.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  p {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+  }
+
+  .tech-name {
+    font-size: 1.25rem !important;
+  }
+
+  .tech-problem {
+    font-size: 1rem !important;
+  }
+
+  ul li {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+  }
+
+  .diagram-container {
+    min-height: 300px;
+    padding: 2rem;
+  }
+
+  .flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .flow-item {
+    background: rgba(123, 104, 238, 0.1);
+    border: 1px solid var(--color-purple);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    position: relative;
+  }
+
+  .flow-arrow {
+    color: var(--color-purple);
+    font-size: 1.5rem;
+  }
+
+  .comparison-diagram {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .vs-divider {
+    font-size: 2rem;
+    color: var(--color-purple);
+    opacity: 0.5;
+  }
+
+  .diagram-box {
+    background: rgba(15, 15, 15, 0.5);
+    border: 1px solid rgba(123, 104, 238, 0.2);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .diagram-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 </style>
 
 <script>
@@ -450,7 +914,6 @@ import Layout from "../../layouts/Layout.astro";
     function showSlide(n: number) {
       const slides = document.querySelectorAll('.slide');
       
-      // Adjust currentSlide if out of bounds
       if (n > totalSlides) {
         currentSlide = 1;
       } else if (n < 1) {
@@ -459,28 +922,23 @@ import Layout from "../../layouts/Layout.astro";
         currentSlide = n;
       }
       
-      // Hide all slides
       slides.forEach(slide => {
         slide.classList.remove('active');
       });
       
-      // Show current slide
       slides[currentSlide - 1].classList.add('active');
       
-      // Update counter
       const currentSlideNum = document.getElementById('currentSlideNum');
       if (currentSlideNum) {
         currentSlideNum.textContent = currentSlide.toString();
       }
     }
 
-    // Initialize counter
     const totalSlidesElement = document.getElementById('totalSlides');
     if (totalSlidesElement) {
       totalSlidesElement.textContent = totalSlides.toString();
     }
 
-    // Navigation event listeners
     document.getElementById('nextSlide')?.addEventListener('click', () => {
       showSlide(currentSlide + 1);
     });
@@ -489,7 +947,6 @@ import Layout from "../../layouts/Layout.astro";
       showSlide(currentSlide - 1);
     });
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === ' ') {
         showSlide(currentSlide + 1);
@@ -499,7 +956,6 @@ import Layout from "../../layouts/Layout.astro";
       }
     });
 
-    // Touch navigation
     let touchStartX = 0;
     document.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
@@ -508,11 +964,13 @@ import Layout from "../../layouts/Layout.astro";
     document.addEventListener('touchend', (e) => {
       const touchEndX = e.changedTouches[0].screenX;
       if (touchEndX < touchStartX) {
-        showSlide(currentSlide + 1); // Swipe left
+        showSlide(currentSlide + 1); 
       }
       if (touchEndX > touchStartX) {
-        showSlide(currentSlide - 1); // Swipe right
+        showSlide(currentSlide - 1); 
       }
     });
   });
 </script>
+
+</Layout>
