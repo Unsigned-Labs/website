@@ -31,6 +31,7 @@ import Layout from "../../layouts/Layout.astro";
               <h3 class="text-xl mb-3">Bonus Features</h3>
               <ul class="space-y-2">
                 <li>• Local First</li>
+                <li>• Interoperability</li>
                 <li>• Good Architecture</li>
               </ul>
             </div>
@@ -465,6 +466,50 @@ import Layout from "../../layouts/Layout.astro";
           <p class="mb-8">Can our app work without internet?</p>
           <div class="text-center">
             <p class="text-xl mb-4">Many Nostr apps don't, but they theoretically can</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-10-5">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Bonus: Interoperability</h2>
+          <p class="mb-8">Can data generated using one app be accessed in other apps?</p>
+
+          <div class="grid grid-cols-2 gap-12">
+            <div class="relative">
+              <div class="diagram-container">
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div>
+                    <div class="tech-name">Nostr</div>
+                    <div class="tech-problem">Same data in Damus, Iris, Snort</div>
+                  </div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-green-400">✓</span>
+                  <div>
+                    <div class="tech-name">Email</div>
+                    <div class="tech-problem">Gmail, Outlook, Thunderbird</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="diagram-container red-border">
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div>
+                    <div class="tech-name">Hypercore</div>
+                  </div>
+                </div>
+                <div class="tech-item">
+                  <span class="text-red-400">✗</span>
+                  <div>
+                    <div class="tech-name">Web5</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
