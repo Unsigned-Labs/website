@@ -131,43 +131,46 @@ import Layout from "../../layouts/Layout.astro";
         <div class="slide-content">
           <h2 class="text-3xl font-light mb-8">Permission Hierarchy Example</h2>
           <p class="mb-8">How @basanta_goswami requires permission from multiple layers:</p>
-
-          <div class="flow-diagram mb-12">
-            <div class="flow-item">
-              <div class="text-xl">ICANN</div>
-              <div class="text-sm opacity-70">Controls global DNS system</div>
+      
+          <div class="grid grid-cols-2 gap-12">
+            <div class="flow-diagram">
+              <div class="flow-item">
+                <div class="text-xl">ICANN</div>
+                <div class="text-sm opacity-70">Controls global DNS system</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-item">
+                <div class="text-xl">Registry Operators (Verisign)</div>
+                <div class="text-sm opacity-70">Operates .com TLD infrastructure</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-item">
+                <div class="text-xl">Domain Registrars (GoDaddy)</div>
+                <div class="text-sm opacity-70">Sells domains to end users</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-item">
+                <div class="text-xl">Twitter Inc.</div>
+                <div class="text-sm opacity-70">Owns twitter.com domain</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-item">
+                <div class="text-xl">End User</div>
+                <div class="text-sm opacity-70">@basanta_goswami</div>
+              </div>
             </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-item">
-              <div class="text-xl">Registry Operators (Verisign)</div>
-              <div class="text-sm opacity-70">Operates .com TLD infrastructure</div>
+      
+            <div class="bg-dark p-6 rounded-lg flex flex-col justify-center">
+              <p class="text-xl mb-4">Each layer needs permission from above:</p>
+              <ul class="space-y-2 text-gray-400">
+                <li>• ICANN controls the root DNS system</li>
+                <li>• Verisign operates .com under ICANN contract</li>
+                <li>• GoDaddy sells domains via Verisign</li>
+                <li>• Twitter bought twitter.com from a registrar</li>
+                <li>• Finally, Twitter assigns usernames</li>
+              </ul>
+              <p class="mt-4 text-gray-400">Without permission at any layer, the entire chain breaks.</p>
             </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-item">
-              <div class="text-xl">Domain Registrars (GoDaddy)</div>
-              <div class="text-sm opacity-70">Sells domains to end users</div>
-            </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-item">
-              <div class="text-xl">Twitter Inc.</div>
-              <div class="text-sm opacity-70">Owns twitter.com domain</div>
-            </div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-item">
-              <div class="text-xl">End User</div>
-              <div class="text-sm opacity-70">@basanta_goswami</div>
-            </div>
-          </div>
-
-          <div class="bg-dark p-6 rounded-lg mt-8">
-            <p class="text-xl mb-4">Each layer needs permission from above:</p>
-            <ul class="space-y-2 text-gray-400">
-              <li>• ICANN controls the root DNS system</li>
-              <li>• Verisign operates .com under ICANN contract</li>
-              <li>• GoDaddy sells domains via Verisign</li>
-              <li>• Twitter bought twitter.com from a registrar</li>
-              <li>• Finally, Twitter assigns usernames</li>
-            </ul>
           </div>
         </div>
       </section>
@@ -528,6 +531,136 @@ import Layout from "../../layouts/Layout.astro";
           </div>
         </div>
       </section>
+
+      <section class="slide" id="slide-12">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Freedom Tech Comparison</h2>
+          <p class="mb-6">How different technologies measure up against our criteria</p>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-dark">
+                  <th class="p-3 text-left">Technology</th>
+                  <th class="p-3 text-center">Sovereign Identity</th>
+                  <th class="p-3 text-center">Signed Public Data</th>
+                  <th class="p-3 text-center">Encrypted Private Data</th>
+                  <th class="p-3 text-center">Self-hostable</th>
+                  <th class="p-3 text-center">Cryptographic Integrity</th>
+                  <th class="p-3 text-center">FOSS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">Nostr</td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">Bitcoin</td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-yellow-400">~</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">Reticulum</td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">Signal</td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">Proton Drive</td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">CryptPad</td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">Yakihonne (Nostr)</td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">Amethyst (Nostr)</td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-3 font-bold">WhatsApp</td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-green-400">✓</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold">Google Drive</td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                  <td class="p-3 text-center"><span class="text-red-400">✗</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <div class="mt-8 flex gap-8 justify-center">
+            <div class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span> 
+              <span>Supported</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-yellow-400 mr-2">~</span> 
+              <span>Partial</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-400 mr-2">✗</span> 
+              <span>Not supported</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <div class="controls">
@@ -618,6 +751,10 @@ import Layout from "../../layouts/Layout.astro";
     color: white;
   }
 
+  .grid {
+    min-height: 450px;
+  }
+
   .grid-lines {
     position: absolute;
     inset: 0;
@@ -629,6 +766,28 @@ import Layout from "../../layouts/Layout.astro";
     transform-origin: center bottom;
     opacity: 0.2;
     z-index: -1;
+  }
+
+  .flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .flow-item {
+    background: rgba(123, 104, 238, 0.1);
+    border: 1px solid var(--color-purple);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .flow-arrow {
+    color: var(--color-purple);
+    font-size: 1.5rem;
   }
 
   .principle-card {
