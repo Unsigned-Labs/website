@@ -1,0 +1,37 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { sellers } from "../../../data/store/sellers";
+---
+
+<Layout title="Sellers">
+  <main class="min-h-screen">
+    <div class="container mx-auto px-6 py-32">
+      <h1 class="text-5xl md:text-6xl font-light mb-16 tracking-tight">
+        <span class="opacity-30">/</span>Sellers
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sellers.map(seller => (
+          <a 
+            href={`/store/sellers/${seller.id}`}
+            class="bg-black/30 rounded-lg overflow-hidden border border-white/10 hover:border-purple-500/30 transition-all duration-300"
+          >
+            {seller.image && (
+              <div class="aspect-square overflow-hidden">
+                <img 
+                  src={seller.image} 
+                  alt={seller.name}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div class="p-6">
+              <h3 class="text-xl font-medium mb-2">{seller.name}</h3>
+              <p class="text-gray-400 text-sm">{seller.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,11 +1,127 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/Store/ProductCard.astro";
+import { products } from "../data/store/products";
+import { categories } from "../data/store/categories";
+import { tags } from "../data/store/tags";
+import { sellers } from "../data/store/sellers";
+
+const { searchParams } = Astro.url;
+const selectedCategory = searchParams.get('category');
+const selectedTag = searchParams.get('tag');
+const selectedSeller = searchParams.get('seller');
+
+const filteredProducts = products.filter(product => {
+  const matchesCategory = !selectedCategory || product.categoryId === selectedCategory;
+  const matchesTag = !selectedTag || product.tags.includes(selectedTag as any);
+  const matchesSeller = !selectedSeller || product.sellerId === selectedSeller;
+  return matchesCategory && matchesTag && matchesSeller;
+});
+
+const getFilterUrl = (type: 'category' | 'tag' | 'seller', value: string | null) => {
+  const params = new URLSearchParams();
+  if (selectedCategory && type !== 'category') params.set('category', selectedCategory);
+  if (selectedTag && type !== 'tag') params.set('tag', selectedTag);
+  if (selectedSeller && type !== 'seller') params.set('seller', selectedSeller);
+  if (value) params.set(type, value);
+  return `/store${params.toString() ? `?${params.toString()}` : ''}`;
+};
 ---
 
 <Layout title="Store">
-  <main class="min-h-screen flex items-center justify-center">
-    <div class="container mx-auto px-6 py-32">
-        <p class="text-center text-lg">Coming soon... :)</p>
+  <main class="min-h-screen">
+    <div class="container mx-auto px-6 py-16">
+      <h1 class="text-5xl md:text-6xl font-light tracking-tight mb-8">
+        <span class="opacity-30">/</span>Store
+      </h1>
+      
+      <div class="flex flex-wrap gap-4 mb-12">
+        {categories.length > 0 && (
+          <div class="relative w-full sm:w-auto min-w-[180px]">
+            <select
+              class="w-full appearance-none bg-gray-800 border border-white/30 text-white rounded-lg px-4 py-2 pr-8 text-sm focus:outline-none focus:border-purple-500 cursor-pointer"
+              onchange="window.location.href=this.value"
+            >
+              <option value={getFilterUrl('category', null)}>All Categories</option>
+              {categories.map(category => (
+                <option 
+                  value={getFilterUrl('category', category.id)}
+                  selected={selectedCategory === category.id}
+                >
+                  {category.name}
+                </option>
+              ))}
+            </select>
+            <!-- Dropdown Arrow -->
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+              </svg>
+            </div>
+          </div>
+        )}
+
+        {tags.length > 0 && (
+          <div class="relative w-full sm:w-auto min-w-[180px]">
+            <select
+              class="w-full appearance-none bg-gray-800 border border-white/30 text-white rounded-lg px-4 py-2 pr-8 text-sm focus:outline-none focus:border-purple-500 cursor-pointer"
+              onchange="window.location.href=this.value"
+            >
+              <option value={getFilterUrl('tag', null)}>All Tags</option>
+              {tags.map(tag => (
+                <option 
+                  value={getFilterUrl('tag', tag.id)}
+                  selected={selectedTag === tag.id}
+                >
+                  {tag.name}
+                </option>
+              ))}
+            </select>
+            <!-- Dropdown Arrow -->
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+              </svg>
+            </div>
+          </div>
+        )}
+
+        {sellers.length > 0 && (
+          <div class="relative w-full sm:w-auto min-w-[180px]">
+            <select
+              class="w-full appearance-none bg-gray-800 border border-white/30 text-white rounded-lg px-4 py-2 pr-8 text-sm focus:outline-none focus:border-purple-500 cursor-pointer"
+              onchange="window.location.href=this.value"
+            >
+              <option value={getFilterUrl('seller', null)}>All Sellers</option>
+              {sellers.map(seller => (
+                <option 
+                  value={getFilterUrl('seller', seller.id)}
+                  selected={selectedSeller === seller.id}
+                >
+                  {seller.name}
+                </option>
+              ))}
+            </select>
+            <!-- Dropdown Arrow -->
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+              </svg>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- Products Grid -->
+      {filteredProducts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProducts.map((product) => <ProductCard product={product} />)}
+        </div>
+      ) : (
+        <div class="text-center py-12">
+          <p class="text-gray-400">No products found with the selected filters.</p>
+        </div>
+      )}
     </div>
   </main>
 </Layout>

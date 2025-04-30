@@ -1,0 +1,76 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Button from "../../../components/Button.astro";
+import { sellers } from "../../../data/store/sellers";
+
+export function getStaticPaths() {
+  return sellers.map(seller => ({
+    params: { id: seller.id },
+    props: { seller }
+  }));
+}
+
+const { seller } = Astro.props;
+
+if (!seller) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={seller.name}>
+  <main class="min-h-screen">
+    <div class="container mx-auto px-6 py-32">
+      <div class="max-w-2xl mx-auto">
+        <a href="/store" class="text-purple-400 hover:text-purple-300 mb-8 inline-block">← Back to Store</a>
+        
+        <div class="bg-black/30 rounded-lg border border-white/10 overflow-hidden">
+          {seller.image && (
+            <img 
+              src={seller.image} 
+              alt={seller.name}
+              class="w-full h-64 object-cover"
+            />
+          )}
+          
+          <div class="p-8">
+            <h1 class="text-4xl font-light mb-4">{seller.name}</h1>
+            <p class="text-gray-300 mb-8 text-lg">{seller.description}</p>
+            
+            <div class="border-t border-white/10 pt-6">
+              <h2 class="text-xl font-light mb-4">Seller Email</h2>
+              <div class="space-y-2">
+                <a 
+                  href={`mailto:${seller.email}`}
+                  class="text-purple-400 hover:text-purple-300 block"
+                >
+                  {seller.email}
+                </a>
+              </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6">
+                <h2 class="text-xl font-light mb-4">Contact Options</h2>
+                {seller.otherContactOptions && seller.otherContactOptions.length > 0 ? (
+                <div class="space-y-2">
+                  {seller.otherContactOptions.map(option => (
+                  <p>{option.name}: <span class="text-purple-400">{option.value}</span></p>
+                  ))}
+                </div>
+                ) : (
+                <p class="text-gray-400">No additional contact options available.</p>
+                )}
+
+            <div class="mt-8">
+              <Button 
+                href={`/store?seller=${seller.id}`}
+                variant="primary"
+              >
+                View Products
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
