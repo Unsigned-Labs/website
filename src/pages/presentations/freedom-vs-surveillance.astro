@@ -1,0 +1,1154 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Freedom Tech or Surveillance Tech"
+  description="How do I tell the difference between freedom tech and surveillance tech?"
+>
+  <div class="presentation">
+    <div class="slides">
+      <!-- Title Slide -->
+      <section class="slide active" id="slide-1">
+        <div class="slide-content">
+          <div class="grid-lines"></div>
+          <h1>
+            Freedom Tech or <br /><span class="text-purple font-bold"
+              >Surveillance Tech?</span>
+          </h1>
+          <p class="text-xl mt-8">How do I tell the difference?</p>
+        </div>
+      </section>
+
+      <!-- Concept 1: Identifiers -->
+      <section class="slide" id="slide-2">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">The Problem with Digital Identity</h2>
+          <p class="mb-8">
+            Most of our digital identifiers are controlled by someone else:
+          </p>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Common Examples</h3>
+              <ul class="space-y-2">
+                <li>• Phone Numbers</li>
+                <li>• Email Addresses</li>
+                <li>• Social Media Handles</li>
+                <li>• Domain Names</li>
+                <li>• IP Addresses</li>
+              </ul>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">The Issue</h3>
+              <ul class="space-y-2">
+                <li>• Someone assigns them to us</li>
+                <li>• They can take them away</li>
+                <li>• We don't truly own them</li>
+                <li>• They track our activities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phone Number Example -->
+      <section class="slide" id="slide-3">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Phone Number Control Chain</h2>
+          <p class="mb-8">Who controls your phone number?</p>
+
+          <div class="flow-diagram">
+            <div class="flow-item">
+              <div class="text-xl">Government Telecom Department</div>
+              <div class="text-sm opacity-70">Controls all phone numbers</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Airtel India</div>
+              <div class="text-sm opacity-70">Gets number blocks to distribute</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Local Airtel Store</div>
+              <div class="text-sm opacity-70">Assigns numbers to users</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">You</div>
+              <div class="text-sm opacity-70">Can only use, not truly own</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Email Example -->
+      <section class="slide" id="slide-4">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Email Address Control Chain</h2>
+          <p class="mb-8">Who controls your email address?</p>
+
+          <div class="flow-diagram">
+            <div class="flow-item">
+              <div class="text-xl">ICANN</div>
+              <div class="text-sm opacity-70">Controls all domain names</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Google</div>
+              <div class="text-sm opacity-70">Owns gmail.com</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item">
+              <div class="text-xl">Gmail User</div>
+              <div class="text-sm opacity-70">Can only use, not own</div>
+            </div>
+          </div>
+
+          <p class="mt-8 text-gray-400">
+            If Google decides to close your account, you lose your email address
+          </p>
+        </div>
+      </section>
+
+      <!-- Real-world Risks -->
+      <section class="slide" id="slide-4a">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">When Centralized IDs Fail...</h2>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">SIM Swap Attack</h3>
+              <div class="text-gray-400 mb-4">
+                Attacker takes over your phone number:
+              </div>
+              <ul class="space-y-2">
+                <li>• Access your 2FA codes</li>
+                <li>• Reset your passwords</li>
+                <li>• Take over email</li>
+                <li>• Access bank accounts</li>
+              </ul>
+              <p class="text-sm text-red-400 mt-4">
+                All because phone numbers are centrally controlled!
+              </p>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Account Suspension</h3>
+              <div class="text-gray-400 mb-4">Google suspends your account:</div>
+              <ul class="space-y-2">
+                <li>• Lose access to email</li>
+                <li>• Can't log into other services</li>
+                <li>• Lose documents & photos</li>
+                <li>• Miss important messages</li>
+                <li>• Business disruption</li>
+              </ul>
+              <p class="text-sm text-red-400 mt-4">
+                No appeal process, no human support!
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 p-6 bg-black bg-opacity-50 rounded-lg">
+            <p class="text-center text-xl">
+              Your digital life shouldn't depend on companies or phone numbers
+            </p>
+            <p class="text-center text-gray-400 mt-2">
+              We need identifiers we truly control
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concept 2: Cryptography Intro -->
+      <section class="slide" id="slide-5">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Enter Cryptography</h2>
+          <p class="mb-8">A brief history of keeping secrets</p>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Ancient Times</h3>
+              <p class="text-gray-400 mb-4">Caesar's secret messages:</p>
+              <p class="font-mono">HELLO → KHOOR</p>
+              <p class="text-sm text-gray-500 mt-2">(Shift each letter by 3)</p>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Modern Times</h3>
+              <p class="text-gray-400 mb-4">Complex mathematical operations:</p>
+              <p class="font-mono text-sm">
+                Advanced algorithms that even computers can't break
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cryptography Use Cases -->
+      <section class="slide" id="slide-6">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">What Can Cryptography Do?</h2>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Privacy</h3>
+              <p class="text-gray-400 mb-4">Keep messages secret</p>
+              <ul class="space-y-2 text-sm">
+                <li>• Only sender and receiver can read</li>
+                <li>• Like a sealed envelope</li>
+              </ul>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Authenticity</h3>
+              <p class="text-gray-400 mb-4">Prove who wrote something</p>
+              <ul class="space-y-2 text-sm">
+                <li>• Like a handwritten signature</li>
+                <li>• Can't be forged</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concept 3: Cryptographic Keys -->
+      <section class="slide" id="slide-9">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Cryptographic Keys</h2>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Private Key</h3>
+              <p class="text-gray-400 mb-4">
+                Your secret control - never share this!
+              </p>
+              <div class="bg-black bg-opacity-50 p-3 rounded text-sm font-mono mb-4">
+                witch collapse practice feed shame open despair creek road again ice
+                least
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Bitcoin wallet seed phrase (like a master password)
+              </p>
+              <div class="bg-black bg-opacity-50 p-3 rounded text-sm font-mono">
+                nsec1vq...j9tq
+              </div>
+              <p class="text-sm text-gray-500 mt-2">
+                Nostr private key (your secret login)
+              </p>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Public Key</h3>
+              <p class="text-gray-400 mb-4">Your public identity - safe to share</p>
+              <div class="bg-black bg-opacity-50 p-3 rounded text-sm font-mono mb-4">
+                npub1unsigned...
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Nostr public key (like your username)
+              </p>
+              <div class="bg-black bg-opacity-50 p-3 rounded text-sm font-mono">
+                bc1qxy...r9lq
+              </div>
+              <p class="text-sm text-gray-500 mt-2">
+                Bitcoin address (like your bank account number)
+              </p>
+            </div>
+          </div>
+
+          <p class="text-center mt-8 text-gray-400">
+            Think of private keys like house keys and public keys like your address -
+            one you keep secret, one you share!
+          </p>
+        </div>
+      </section>
+
+      <!-- Facebook Messenger Example -->
+      <section class="slide" id="slide-7">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Example: Facebook Messenger</h2>
+
+          <div class="comparison-diagram mb-12">
+            <div class="diagram-box" style="border-color: rgba(239, 68, 68, 0.2);">
+              <div class="diagram-icon">👀</div>
+              <p>Current System</p>
+              <p class="text-sm opacity-70">Facebook can read all messages</p>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="diagram-box">
+              <div class="diagram-icon">🔒</div>
+              <p>With End-to-End Encryption</p>
+              <p class="text-sm opacity-70">Only you and recipient can read</p>
+            </div>
+          </div>
+
+          <p class="text-center text-gray-400">
+            WhatsApp and Signal already use end-to-end encryption!
+          </p>
+        </div>
+      </section>
+
+      <!-- Twitter Example -->
+      <section class="slide" id="slide-8">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Example: Twitter/X Posts</h2>
+
+          <div class="comparison-diagram mb-12">
+            <div class="diagram-box" style="border-color: rgba(239, 68, 68, 0.2);">
+              <div class="diagram-icon">😱</div>
+              <p>Current System</p>
+              <p class="text-sm opacity-70">Platform can post as you</p>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="diagram-box">
+              <div class="diagram-icon">✍️</div>
+              <p>With Digital Signatures</p>
+              <p class="text-sm opacity-70">Only you can post as you</p>
+            </div>
+          </div>
+
+          <p class="text-center text-gray-400">
+            Nostr already uses digital signatures for all posts!
+          </p>
+        </div>
+      </section>
+
+      <!-- Concept 4: Names -->
+      <section class="slide" id="slide-10">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">The Name Problem</h2>
+
+          <div class="space-y-6">
+            <p class="text-xl">We need human-readable names, but...</p>
+
+            <ul class="space-y-4 text-gray-400">
+              <li>• Names must be unique (like usernames)</li>
+              <li>• Someone needs to manage these names</li>
+              <li>• This creates central points of control</li>
+              <li>• What if we could name things locally instead?</li>
+            </ul>
+
+            <div class="bg-black bg-opacity-50 p-6 rounded-lg mt-8">
+              <p class="text-lg">Solution: Personal Contact Lists</p>
+              <p class="text-gray-400 mt-2">
+                Like your phone's contact list - you decide what to call each person!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Local vs Global Names Examples -->
+      <section class="slide" id="slide-10a">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Local vs Global Names: Examples</h2>
+
+          <div class="grid grid-cols-2 gap-8 mb-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">IP Addresses</h3>
+              <p class="text-gray-400 mb-4">Local name: localhost</p>
+              <p class="text-sm text-gray-400">
+                You decide what localhost means on your computer
+              </p>
+              <div class="mt-4 p-2 bg-black bg-opacity-50 rounded">
+                <p class="font-mono text-sm">127.0.0.1 → localhost</p>
+              </div>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Domain Names</h3>
+              <p class="text-gray-400 mb-4">Global name: google.com</p>
+              <p class="text-sm text-gray-400">
+                ICANN controls who gets which domain
+              </p>
+              <div class="mt-4 p-2 bg-black bg-opacity-50 rounded">
+                <p class="font-mono text-sm">142.250.1.139 → google.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Contact Names</h3>
+              <p class="text-gray-400 mb-4">Local name: "Mom"</p>
+              <p class="text-sm text-gray-400">
+                You choose what to call each contact
+              </p>
+              <div class="mt-4 p-2 bg-black bg-opacity-50 rounded">
+                <p class="font-mono text-sm">+1-555-0123 → "Mom" ❤️</p>
+              </div>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Phone Book</h3>
+              <p class="text-gray-400 mb-4">Global name: "John Smith"</p>
+              <p class="text-sm text-gray-400">Phone company decides the listing</p>
+              <div class="mt-4 p-2 bg-black bg-opacity-50 rounded">
+                <p class="font-mono text-sm">+1-555-0123 → "John Smith"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concept 5: Open Source -->
+      <section class="slide" id="slide-12">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Open Source Software</h2>
+
+          <div class="comparison-diagram mb-12">
+            <div class="diagram-box" style="border-color: rgba(239, 68, 68, 0.2);">
+              <div class="diagram-icon">🔒</div>
+              <p>Closed Source</p>
+              <p class="text-sm opacity-70">Can't see how it works</p>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="diagram-box">
+              <div class="diagram-icon">👀</div>
+              <p>Open Source</p>
+              <p class="text-sm opacity-70">Code is public</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">WhatsApp</h3>
+              <p class="text-gray-400">"Trust us, it's secure"</p>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Signal</h3>
+              <p class="text-gray-400">"Here's the proof it's secure"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open Source Code Example -->
+      <section class="slide" id="slide-12a">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">What's Inside the App?</h2>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Human-Readable Code</h3>
+              <div class="bg-black bg-opacity-50 p-3 rounded text-sm font-mono">
+                <br />def hello_world():
+                <br />...print("Hello, World!")
+                <br />
+                <br /># No secrets here
+                <br />hello_world()
+              </div>
+              <p class="text-sm text-gray-500 mt-2">Easy to read and verify</p>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Machine Code</h3>
+              <div class="bg-black bg-opacity-50 p-3 rounded text-sm font-mono">
+                48 65 6C 6C 6F 21 89 E5 8B 45 08 5D C3 90 90 90 90 90
+              </div>
+              <p class="text-sm text-gray-500 mt-2">
+                Impossible to verify what it really does
+              </p>
+            </div>
+          </div>
+
+          <p class="text-center mt-8 text-gray-400">
+            Open source lets you (or experts you trust) verify there's nothing
+            malicious in the code!
+          </p>
+        </div>
+      </section>
+
+      <!-- Concept 6: Self-Hostability -->
+      <section class="slide" id="slide-13">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Control Your Data</h2>
+
+          <p class="mb-8">Where does your data live?</p>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Self-Hosted</h3>
+              <ul class="space-y-2 text-gray-400">
+                <li>• Bitcoin node</li>
+                <li>• Nostr relay</li>
+                <li>• Your own server</li>
+              </ul>
+            </div>
+            <div class="principle-card">
+              <h3 class="text-xl mb-3">Company Servers</h3>
+              <ul class="space-y-2 text-gray-400">
+                <li>• Signal servers</li>
+                <li>• Proton servers</li>
+                <li>• Google Drive</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="text-center mt-8 text-gray-400">
+            If their servers go down, you lose access!
+          </p>
+        </div>
+      </section>
+
+      <!-- Concept 7: Protocols vs Platforms -->
+      <section class="slide" id="slide-14">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Protocols vs Platforms</h2>
+
+          <div class="comparison-diagram mb-12">
+            <div class="diagram-box">
+              <div class="diagram-icon">🌐</div>
+              <p>Web Protocol (HTTP)</p>
+              <p class="text-sm opacity-70">Any browser, any website</p>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="diagram-box" style="border-color: rgba(239, 68, 68, 0.2);">
+              <div class="diagram-icon">📱</div>
+              <p>Facebook Platform</p>
+              <p class="text-sm opacity-70">Only their app works</p>
+            </div>
+          </div>
+
+          <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+            <p class="text-center text-xl mb-4">Protocols Enable Choice</p>
+            <ul class="space-y-2 text-gray-400">
+              <li>• Email: Gmail, Outlook, or your own server</li>
+              <li>• Web: Chrome, Firefox, or Safari</li>
+              <li>• Nostr: Damus, Iris, or any other client</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Freedom Tech Comparison -->
+      <section class="slide" id="slide-14a">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-4">Freedom Tech Comparison</h2>
+          <p class="mb-2 text-base">
+            How different technologies measure up against our criteria
+          </p>
+
+          <div class="overflow-x-auto comparison-table">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-dark">
+                  <th class="p-1 text-left">Technology</th>
+                  <th class="p-1 text-center">Self-Generated Identity</th>
+                  <th class="p-1 text-center">Signed Data</th>
+                  <th class="p-1 text-center">Encrypted Data</th>
+                  <th class="p-1 text-center">Self-hostable</th>
+                  <th class="p-1 text-center">Data Integrity</th>
+                  <th class="p-1 text-center">Open Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">Nostr</td>
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">Bitcoin</td>
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-yellow-400">~</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">Reticulum</td>
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">Signal</td>
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">Proton Drive</td>
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">CryptPad</td>
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">Yakihonne</td>
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">Amethyst</td>
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="p-1 font-bold">WhatsApp</td>
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"
+                    ><span class="text-green-400">✓</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                </tr>
+                <tr>
+                  <td class="p-1 font-bold">Google Drive</td>
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                  <td class="p-1 text-center"><span class="text-red-400">✗</span></td
+                  >
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-4 flex gap-8 justify-center text-sm">
+            <div class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Supported</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-yellow-400 mr-2">~</span>
+              <span>Partial</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-400 mr-2">✗</span>
+              <span>Not supported</span>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .comparison-table {
+            font-size: 0.9rem !important;
+          }
+
+          .comparison-table th,
+          .comparison-table td {
+            font-size: 0.9rem !important;
+          }
+
+          .comparison-table td.font-bold {
+            font-size: 0.9rem !important;
+          }
+        </style>
+      </section>
+
+      <!-- Summary -->
+      <section class="slide" id="slide-15">
+        <div class="slide-content">
+          <h2 class="text-3xl font-light mb-8">Freedom Tech Checklist</h2>
+
+          <div class="space-y-6 bg-black bg-opacity-50 p-8 rounded-lg">
+            <div class="flex items-center">
+              <span class="text-green-400 mr-4 text-2xl">✓</span>
+              <div>
+                <h3 class="text-xl inline">Self-Generated Identity:</h3>
+                <span class="text-gray-400 ml-2"
+                  >No permission needed to participate</span
+                >
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <span class="text-green-400 mr-4 text-2xl">✓</span>
+              <div>
+                <h3 class="text-xl inline">End-to-End Encryption:</h3>
+                <span class="text-gray-400 ml-2"
+                  >Only you can read your private data</span
+                >
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <span class="text-green-400 mr-4 text-2xl">✓</span>
+              <div>
+                <h3 class="text-xl inline">Data Integrity:</h3>
+                <span class="text-gray-400 ml-2"
+                  >Authentic, and tamper-proof content</span
+                >
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <span class="text-green-400 mr-4 text-2xl">✓</span>
+              <div>
+                <h3 class="text-xl inline">Open Source:</h3>
+                <span class="text-gray-400 ml-2">Code is public and verifiable</span>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <span class="text-green-400 mr-4 text-2xl">✓</span>
+              <div>
+                <h3 class="text-xl inline">Self-Hostable:</h3>
+                <span class="text-gray-400 ml-2"
+                  >You control where your data lives</span
+                >
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <span class="text-green-400 mr-4 text-2xl">✓</span>
+              <div>
+                <h3 class="text-xl inline">Protocol-Based:</h3>
+                <span class="text-gray-400 ml-2"
+                  >Freedom to choose different apps</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="controls">
+      <button id="prevSlide" class="control-btn" aria-label="Previous slide">
+        <span class="text-2xl">←</span>
+      </button>
+      <button id="nextSlide" class="control-btn" aria-label="Next slide">
+        <span class="text-2xl">→</span>
+      </button>
+    </div>
+
+    <div class="slide-counter">
+      <span id="currentSlideNum">1</span>/<span id="totalSlides">17</span>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .presentation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-background);
+  }
+
+  .slides {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .slide.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .slide-content {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+
+  .bg-dark {
+    background-color: rgba(15, 15, 15, 0.5);
+  }
+
+  .controls {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .control-btn {
+    background: rgba(123, 104, 238, 0.1);
+    border: 1px solid var(--color-purple);
+    color: var(--color-purple);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .control-btn:hover {
+    background: var(--color-purple);
+    color: white;
+  }
+
+  .grid {
+    min-height: 450px;
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(123, 104, 238, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(123, 104, 238, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+    transform: perspective(1000px) rotateX(45deg) scale(2);
+    transform-origin: center bottom;
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  .flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .flow-item {
+    background: rgba(123, 104, 238, 0.1);
+    border: 1px solid var(--color-purple);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .flow-arrow {
+    color: var(--color-purple);
+    font-size: 1.5rem;
+  }
+
+  .principle-card {
+    background: rgba(15, 15, 15, 0.5);
+    border: 1px solid rgba(123, 104, 238, 0.2);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .principle-card:hover {
+    border-color: var(--color-purple);
+    transform: translateY(-2px);
+  }
+
+  .comparison-diagram {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .vs-divider {
+    font-size: 2rem;
+    color: var(--color-purple);
+    opacity: 0.5;
+  }
+
+  .diagram-box {
+    background: rgba(15, 15, 15, 0.5);
+    border: 1px solid rgba(123, 104, 238, 0.2);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .diagram-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 3.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  h3 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+  }
+
+  p,
+  li {
+    font-size: 1.8rem !important;
+    line-height: 1.5;
+  }
+
+  .text-sm {
+    font-size: 1.5rem !important;
+  }
+
+  .text-xl {
+    font-size: 2rem !important;
+  }
+
+  .text-gray-400,
+  .text-gray-500 {
+    font-size: 1.8rem !important;
+  }
+
+  .font-mono {
+    font-size: 1.5rem !important;
+  }
+
+  .principle-card li {
+    font-size: 1.8rem !important;
+  }
+
+  .flow-item {
+    font-size: 1.8rem;
+  }
+
+  .flow-item .text-sm {
+    font-size: 1.5rem !important;
+  }
+
+  .diagram-box p {
+    font-size: 1.8rem !important;
+  }
+
+  .diagram-box .text-sm {
+    font-size: 1.5rem !important;
+  }
+
+  .slide-counter {
+    font-size: 1.2rem;
+  }
+
+  /* Make sure the content is readable on smaller screens */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem !important;
+    }
+
+    h3 {
+      font-size: 1.8rem !important;
+    }
+
+    p,
+    li {
+      font-size: 1.5rem !important;
+    }
+
+    .text-sm {
+      font-size: 1.2rem !important;
+    }
+
+    .text-xl {
+      font-size: 1.5rem !important;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let currentSlide = 1;
+    const totalSlides = document.querySelectorAll(".slide").length;
+
+    function showSlide(n: number) {
+      const slides = document.querySelectorAll(".slide");
+
+      if (n > totalSlides) {
+        currentSlide = 1;
+      } else if (n < 1) {
+        currentSlide = totalSlides;
+      } else {
+        currentSlide = n;
+      }
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      slides[currentSlide - 1].classList.add("active");
+
+      const currentSlideNum = document.getElementById("currentSlideNum");
+      if (currentSlideNum) {
+        currentSlideNum.textContent = currentSlide.toString();
+      }
+    }
+
+    const totalSlidesElement = document.getElementById("totalSlides");
+    if (totalSlidesElement) {
+      totalSlidesElement.textContent = totalSlides.toString();
+    }
+
+    document.getElementById("nextSlide")?.addEventListener("click", () => {
+      showSlide(currentSlide + 1);
+    });
+
+    document.getElementById("prevSlide")?.addEventListener("click", () => {
+      showSlide(currentSlide - 1);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " ") {
+        showSlide(currentSlide + 1);
+      }
+      if (e.key === "ArrowLeft") {
+        showSlide(currentSlide - 1);
+      }
+    });
+
+    let touchStartX = 0;
+    document.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener("touchend", (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX) {
+        showSlide(currentSlide + 1);
+      }
+      if (touchEndX > touchStartX) {
+        showSlide(currentSlide - 1);
+      }
+    });
+  });
+</script>
