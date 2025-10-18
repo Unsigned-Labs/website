@@ -56,15 +56,8 @@ const currentPath = Astro.url.pathname;
 
 <script>
   import { initHeaderScroll, initMobileMenu } from "../../scripts/header";
-  import { createIcons, Menu } from "lucide";
 
   document.addEventListener("DOMContentLoaded", () => {
-    createIcons({
-      icons: {
-        Menu,
-      },
-    });
-
     initHeaderScroll();
     initMobileMenu();
   });

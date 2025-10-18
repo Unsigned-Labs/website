@@ -4,6 +4,7 @@ import Hero from "../components/Home/Hero.astro";
 import EventsSection from "../components/Home/EventsSection.astro";
 import PodcastSection from "../components/Home/PodcastSection.astro";
 import HengdangSection from "../components/Home/HengdangSection.astro";
+import ProductsSection from "../components/Home/ProductsSection.astro";
 ---
 
 <Layout
@@ -11,6 +12,9 @@ import HengdangSection from "../components/Home/HengdangSection.astro";
   description="Unsigned Labs - Building tools for digital self-sovereignty through cryptography, FOSS & open protocols"
 >
   <Hero />
+  <div class="section light">
+    <ProductsSection />
+  </div>
 
   <div class="section dark">
     <EventsSection />

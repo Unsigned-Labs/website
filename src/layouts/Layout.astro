@@ -32,5 +32,35 @@ const { title, description = "Unsigned Labs - Building tools for digital self-so
     </main>
 
     <Footer />
+    
+    <script>
+      import { createIcons, ArrowRight, Keyboard, Sprout, Github, Globe, Sparkles, ArrowUpRight, Menu, X, Shield, Code, Laptop, ExternalLink } from 'lucide';
+
+      function registerIcons() {
+        createIcons({
+          icons: {
+            ArrowRight,
+            Keyboard,
+            Sprout,
+            Github,
+            Globe,
+            Sparkles,
+            ArrowUpRight,
+            Menu,
+            X,
+            Shield,
+            Code,
+            Laptop,
+            ExternalLink,
+          },
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', registerIcons);
+      } else {
+        registerIcons();
+      }
+    </script>
   </body>
 </html>

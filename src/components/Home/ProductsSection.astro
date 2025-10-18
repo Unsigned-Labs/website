@@ -1,0 +1,78 @@
+---
+import Button from "../Button.astro";
+---
+
+<section id="projects" class="py-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-8">
+        <h2 class="text-3xl sm:text-4xl font-light">Products</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <article class="bg-[color:var(--color-surface,#0b0b0b)] border border-white/6 rounded-xl p-6 shadow-md flex flex-col">
+          <div class="flex items-center gap-4 mb-4">
+            <span data-lucide="keyboard" class="w-6 h-6 text-white"></span>
+            <h3 class="text-lg font-medium">Unsigned Keyboard</h3>
+          </div>
+
+          <p class="text-sm text-gray-300 mb-6">
+            Type Indian languages using a web app, or browser extension. Android app coming soon. 100% free, open source and private.
+          </p>
+
+          <div class="mt-auto flex flex-wrap gap-3">
+            <Button href="https://keyboard.unsigned.in" variant="primary" target="_blank">
+              <span data-lucide="globe" class="w-4 h-4 mr-2"></span>
+              Visit
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+
+            <Button href="https://github.com/Unsigned-Labs/keyboard" variant="secondary" target="_blank">
+              <span data-lucide="github" class="w-4 h-4 mr-2"></span>
+              GitHub
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="bg-[color:var(--color-surface,#0b0b0b)] border border-white/6 rounded-xl p-6 shadow-md flex flex-col">
+          <div class="flex items-center gap-4 mb-4">
+            <span data-lucide="sprout" class="w-6 h-6 text-white"></span>
+            <h3 class="text-lg font-medium">Hash Garden</h3>
+          </div>
+
+          <p class="text-sm text-gray-300 mb-6">
+            Your blossom file manager.
+          </p>
+
+          <div class="mt-auto flex flex-wrap gap-3">
+            <Button href="http://hashgarden.unsigned.in/" variant="primary" target="_blank">
+              <span data-lucide="globe" class="w-4 h-4 mr-2"></span>
+              Visit
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+
+            <Button href="http://github.com/Unsigned-Labs/hashgarden/" variant="secondary" target="_blank">
+              <span data-lucide="github" class="w-4 h-4 mr-2"></span>
+              GitHub
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="bg-[color:var(--color-surface,#0b0b0b)] border border-white/6 rounded-xl p-6 shadow-md flex items-center justify-center">
+          <p class="text-sm text-gray-300 italic">More stuff coming soon...</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* keep visuals aligned with site: subtle border and radius already used */
+  #projects a { color: inherit; }
+</style>
+
