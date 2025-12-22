@@ -1,0 +1,57 @@
+---
+import Button from "../Button.astro";
+---
+
+<section id="partners" class="py-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-light">Our Partners</h2>
+      </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-1 lg:flex lg:justify-center lg:gap-8"
+      >
+        <!-- Infrastructure Partner -->
+        <article
+          class="bg-[color:var(--color-surface,#0b0b0b)] border border-white/6 rounded-xl p-6 shadow-md flex flex-col w-full max-w-md"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <img src="/assets/logos/formstr.svg" alt="Formstr Logo" class="w-10 h-10 object-contain" />
+            <h3 class="text-lg font-medium">Formstr</h3>
+            <span class="ml-2 px-2 py-1 text-xs rounded bg-indigo-700 text-white">Infrastructure Partner</span>
+          </div>
+          <p class="text-sm text-gray-300 mb-6">
+            Formstr provides backend infrastructure support for the many projects of ours.
+          </p>
+          <div class="mt-auto flex flex-wrap gap-3">
+            <Button href="https://formstr.app" variant="primary" target="_blank">
+              <span data-lucide="globe" class="w-4 h-4 mr-2"></span>
+              Visit
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+          </div>
+        </article>
+        <!-- Venue Partner -->
+        <article
+          class="bg-[color:var(--color-surface,#0b0b0b)] border border-white/6 rounded-xl p-6 shadow-md flex flex-col w-full max-w-md"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <img src="/assets/logos/bitspace.png" alt="Bitspace Logo" class="w-10 h-10 object-contain" />
+            <h3 class="text-lg font-medium">Bitspace</h3>
+            <span class="ml-2 px-2 py-1 text-xs rounded bg-green-700 text-white">Venue Partner</span>
+          </div>
+          <p class="text-sm text-gray-300 mb-6">
+            Bitspace by Bitshala is our venue partner for the community events that we host, including Cyberswaraj.
+          </p>
+          <div class="mt-auto flex flex-wrap gap-3">
+            <Button href="https://bitshala.org/bitspace" variant="primary" target="_blank">
+              <span data-lucide="globe" class="w-4 h-4 mr-2"></span>
+              Visit
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
