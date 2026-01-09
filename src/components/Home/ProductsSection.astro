@@ -63,8 +63,29 @@ import Button from "../Button.astro";
         </article>
 
         <!-- Card 3 -->
-        <article class="bg-[color:var(--color-surface,#0b0b0b)] border border-white/6 rounded-xl p-6 shadow-md flex items-center justify-center">
-          <p class="text-sm text-gray-300 italic">More stuff coming soon...</p>
+        <article class="bg-[color:var(--color-surface,#0b0b0b)] border border-white/6 rounded-xl p-6 shadow-md flex flex-col">
+          <div class="flex items-center gap-4 mb-4">
+            <span data-lucide="wrench" class="w-6 h-6 text-white"></span>
+            <h3 class="text-lg font-medium">nwak</h3>
+          </div>
+
+          <p class="text-sm text-gray-300 mb-6">
+            Nostr web army knife - a fork of fiatjaf's nwak (<a href="https://github.com/fiatjaf/nwak" target="_blank" class="text-purple-400 hover:text-purple-300 underline">source</a>, <a href="https://nwak.nostr.technology/" target="_blank" class="text-purple-400 hover:text-purple-300 underline">web app</a>) with a more sleek UI.
+          </p>
+
+          <div class="mt-auto flex flex-wrap gap-3">
+            <Button href="https://nwak.unsigned.in" variant="primary" target="_blank">
+              <span data-lucide="globe" class="w-4 h-4 mr-2"></span>
+              Visit
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+
+            <Button href="https://github.com/Unsigned-Labs/nwak" variant="secondary" target="_blank">
+              <span data-lucide="github" class="w-4 h-4 mr-2"></span>
+              GitHub
+              <span data-lucide="arrow-up-right" class="w-4 h-4 ml-2"></span>
+            </Button>
+          </div>
         </article>
       </div>
     </div>
