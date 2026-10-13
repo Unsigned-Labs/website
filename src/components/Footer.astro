@@ -10,20 +10,6 @@ const resources = [
   },
 ];
 
-const hengdang = [
-  { name: "Hengdang Protocol", url: "https://hengdang-protocol.github.io/", external: true },
-  {
-    name: "Hengdang Protocol Spec",
-    url: "https://github.com/Hengdang-Protocol/spec/",
-    external: true,
-  },
-  {
-    name: "Hengdang Matrix Community",
-    url: "https://matrix.to/#/#hengdang:matrix.org",
-    external: true,
-  },
-];
-
 const social = [
   { name: "GitHub", url: "https://github.com/unsigned-labs", external: true },
   {
@@ -44,31 +30,6 @@ const social = [
         <ul class="space-y-2">
           {
             resources.map((item) => (
-              <li>
-                <a
-                  href={item.url}
-                  class="text-gray-300 hover:text-purple-400 transition-colors text-sm flex items-center group"
-                  {...(item.external ? { target: "_blank", rel: "noopener" } : {})}
-                >
-                  {item.name}
-                  {item.external && (
-                    <span
-                      data-lucide="external-link"
-                      class="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                    />
-                  )}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <div class="w-1/2 md:w-1/4 mb-8">
-        <h3 class="text-sm uppercase text-gray-500 tracking-wider mb-4 font-medium">HENGDANG</h3>
-        <ul class="space-y-2">
-          {
-            hengdang.map((item) => (
               <li>
                 <a
                   href={item.url}
