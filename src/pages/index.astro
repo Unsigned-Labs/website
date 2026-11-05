@@ -1,10 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Home/Hero.astro";
-import EventsSection from "../components/Home/EventsSection.astro";
-import PodcastSection from "../components/Home/PodcastSection.astro";
 import ProductsSection from "../components/Home/ProductsSection.astro";
-import PartnersSection from "../components/Home/PartnersSection.astro";
 ---
 
 <Layout
@@ -15,31 +12,9 @@ import PartnersSection from "../components/Home/PartnersSection.astro";
   <div class="section light">
     <ProductsSection />
   </div>
-
-  <div class="section dark">
-    <EventsSection />
-  </div>
-
-  <div class="section accent">
-    <PodcastSection />
-  </div>
-
-  <div class="section light">
-    <PartnersSection />
-  </div>
 </Layout>
 
 <style>
-  .section .dark {
-    background-color: var(--color-background);
-    position: relative;
-  }
-
-  .section .accent {
-    background-color: var(--color-dark-accent);
-    position: relative;
-  }
-
   .section::after {
     content: "";
     position: absolute;

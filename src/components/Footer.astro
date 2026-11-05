@@ -3,11 +3,12 @@ const resources = [
   { name: "Our Vision", url: "/blog/our-vision" },
   { name: "Support Us", url: "/support" },
   { name: "Presentations", url: "/presentations" },
-  {
-    name: "Cyber Swaraj",
-    url: "https://www.youtube.com/playlist?list=PLVksdnIVEIUWvhc8iC0-YzCbRZIh8L-fQ",
-    external: true,
-  },
+];
+
+const friends = [
+  { name: "Cyberswaraj", url: "https://cyberswaraj.org" },
+  { name: "Bitshala", url: "https://bitshala.org" },
+  { name: "Formstr", url: "https://formstr.app" },
 ];
 
 const social = [
@@ -55,6 +56,30 @@ const social = [
         <ul class="space-y-2">
           {
             social.map((item) => (
+              <li>
+                <a
+                  href={item.url}
+                  class="text-gray-300 hover:text-purple-400 transition-colors text-sm flex items-center group"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {item.name}
+                  <span
+                    data-lucide="external-link"
+                    class="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="w-1/2 md:w-1/4 mb-8">
+        <h3 class="text-sm uppercase text-gray-500 tracking-wider mb-4 font-medium">FRIENDS</h3>
+        <ul class="space-y-2">
+          {
+            friends.map((item) => (
               <li>
                 <a
                   href={item.url}
